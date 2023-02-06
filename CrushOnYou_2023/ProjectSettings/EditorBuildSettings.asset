@@ -12,21 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/AnswerSubmit.unity
     guid: ec3da2678c16cf94aa3f900e8d28035e
   - enabled: 1
-    path: Assets/Scenes/CharSelect.unity
-    guid: 0019c61869eb4924dba80520c985eeef
-  - enabled: 1
-    path: Assets/Scenes/EpisodeSelect.unity
+    path: Assets/Scenes/EpisodeSelect_LJY.unity
     guid: b76e19eb5b541134f8314d2508036025
-  - enabled: 1
-    path: Assets/Scenes/PlayerSelect.unity
-    guid: a04e4dd047b39cf439dfabf0020f72bf
-  - enabled: 1
-    path: Assets/Scenes/Start.unity
-    guid: ddef5b7c3353c5a4e93ad6695e7afbaf
-  - enabled: 1
-    path: Assets/Scenes/TalkScene.unity
-    guid: 44d0b1ddd2090c14b99db901c382f259
-  - enabled: 1
-    path: Assets/Scenes/TalkSelect.unity
-    guid: 95338246204539844a2cb4335ec0dd15
   m_configObjects: {}
