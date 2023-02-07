@@ -17,7 +17,7 @@ public class DataController : MonoBehaviour
     }
 
     static DataController _instance;
-    public static DataController Instance                                                   //해당 스크립트를 어디에서든 불러올 수 있게끔 하는 함수 
+    public static DataController Instance  //해당 스크립트를 어디에서든 불러올 수 있게끔 하는 함수 
     {
         get
         {

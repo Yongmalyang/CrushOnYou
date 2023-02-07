@@ -28,10 +28,10 @@ public class SelectPlace : MonoBehaviour
         DataManager.Data.myPlace = PlaceIndex; //선택한 장소 저장
         DataManager.Data.turn++; //턴 증가
         if(DataManager.Data.count[PlaceIndex] == 0){ //선택한 장소에 아무도 없을 때
-            SceneManager.LoadScene("TalkScene0");
+            SceneManager.LoadScene("TalkScene0_PSY");
         }
         else{ //선택한 장소에 한 명이나 두 명이 있을 때
-            SceneManager.LoadScene("TalkScene1");
+            SceneManager.LoadScene("TalkScene1_PSY");
         }
         
     }

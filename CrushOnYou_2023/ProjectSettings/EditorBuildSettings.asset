@@ -8,10 +8,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start_LJY.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/AnswerSubmit.unity
-    guid: ec3da2678c16cf94aa3f900e8d28035e
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/EpisodeSelect_LJY.unity
     guid: b76e19eb5b541134f8314d2508036025
+  - enabled: 1
+    path: Assets/Scenes/PlaceScene_PSY.unity
+    guid: 1db4e14d562effa47a7ef5aa8400d20d
+  - enabled: 1
+    path: Assets/Scenes/SelectChar_PSY.unity
+    guid: 7330b3ec2cd8e854cbd2191c292422a1
+  - enabled: 1
+    path: Assets/Scenes/TalkScene0_PSY.unity
+    guid: c3d8ad8c760a9c14ca7a67ab6304fe00
+  - enabled: 1
+    path: Assets/Scenes/TalkScene1_PSY.unity
+    guid: 1aa37e421792ea94da8ec57caee4b3f3
+  - enabled: 1
+    path: Assets/Scenes/Ending_PSY.unity
+    guid: 8ba29d921e2d6a848a57637c6796e450
   m_configObjects: {}

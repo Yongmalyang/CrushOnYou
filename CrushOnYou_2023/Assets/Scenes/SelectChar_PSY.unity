@@ -347,7 +347,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 157191953}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f34536f1c03eac4ea4af1b72bfba152, type: 3}
+  m_Script: {fileID: 11500000, guid: b32ef958ad63c4b4e8ebe321efacf857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CharIndex: 0
@@ -660,7 +660,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 595891252}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740a887e1fcb8b64a8d2c75a763c8b41, type: 3}
+  m_Script: {fileID: 11500000, guid: d614c19fbd6eb2843aad3efeec193677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myLover: 0
@@ -669,6 +669,7 @@ MonoBehaviour:
   turn: 0
   place: 
   count: 
+  loveWho: 010000000200000003000000040000000500000007000000
   RedLove: 
   GreenLove: 
   BlueLove: 
@@ -989,7 +990,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 916857572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f34536f1c03eac4ea4af1b72bfba152, type: 3}
+  m_Script: {fileID: 11500000, guid: b32ef958ad63c4b4e8ebe321efacf857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CharIndex: 5
@@ -1515,7 +1516,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1393974800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f34536f1c03eac4ea4af1b72bfba152, type: 3}
+  m_Script: {fileID: 11500000, guid: b32ef958ad63c4b4e8ebe321efacf857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CharIndex: 4
@@ -1771,7 +1772,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1427708808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f34536f1c03eac4ea4af1b72bfba152, type: 3}
+  m_Script: {fileID: 11500000, guid: b32ef958ad63c4b4e8ebe321efacf857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CharIndex: 3
@@ -2027,7 +2028,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1750710996}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f34536f1c03eac4ea4af1b72bfba152, type: 3}
+  m_Script: {fileID: 11500000, guid: b32ef958ad63c4b4e8ebe321efacf857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CharIndex: 1
@@ -2148,7 +2149,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1869550815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f34536f1c03eac4ea4af1b72bfba152, type: 3}
+  m_Script: {fileID: 11500000, guid: b32ef958ad63c4b4e8ebe321efacf857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CharIndex: 2
