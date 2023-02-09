@@ -98,10 +98,10 @@ public class TalkSceneManager : MonoBehaviour
     public void SelectKeyword(){ //사용자가 키워드 버튼 눌렀을 때
         string ButtonName = EventSystem.current.currentSelectedGameObject.name;
         switch(ButtonName){
-            case "Kw1" : ManageLove(0); GenerateData(toShow[0].word); Action(); break;
-            case "Kw2" : ManageLove(1); GenerateData(toShow[1].word); Action(); break;
-            case "Kw3" : ManageLove(2); GenerateData(toShow[2].word); Action(); break;
-            case "Kw4" : ManageLove(3); GenerateData(toShow[3].word); Action(); break;
+            case "Kw1" : ManageLove(0); GenerateData(toShow[0].word); Talk(); break;
+            case "Kw2" : ManageLove(1); GenerateData(toShow[1].word); Talk(); break;
+            case "Kw3" : ManageLove(2); GenerateData(toShow[2].word); Talk(); break;
+            case "Kw4" : ManageLove(3); GenerateData(toShow[3].word); Talk(); break;
         }
         Btns.SetActive(false); //버튼 한번 누르면 비활성화
     }
@@ -174,6 +174,7 @@ public class TalkSceneManager : MonoBehaviour
     }
 
     public GameObject talkPanel;
+    public GameObject SceneLoadBtn;
     public TMP_Text TalkName;
     public TMP_Text TalkText;
     public bool isAction;
@@ -185,17 +186,11 @@ public class TalkSceneManager : MonoBehaviour
         for(int i=0; i<ppHere.Count; i++){            
             string key = ppHere[i].ToString() + ButtonName;
             Debug.Log(key);
-            Debug.Log(ScriptManager.ScriptsInfo[key].talk[0]);
             talkData.Add(ScriptManager.ScriptsInfo[key]);
         }
     }
-    public void Action() //대사창 클릭할 때마다 실행
-    {
-        //talkPanel.SetActive(isAction);
-        Talk();   
-    }
 
-    void Talk(){ //대사 띄우고 대사 끝났는지 안끝났는지 확인
+    public void Talk(){ //대사 띄우고 대사 끝났는지 안끝났는지 확인
 
         string line = GetTalk();
         if(line == null)
@@ -217,6 +212,7 @@ public class TalkSceneManager : MonoBehaviour
 
             if(talkIndex == talkData[0].talk.Count){
                 talkPanel.SetActive(false);
+                SceneLoadBtn.SetActive(true);
                 talkIndex = 0;
                 talkData.RemoveAt(0);
                 Debug.Log("삭제");
@@ -233,7 +229,7 @@ public class TalkSceneManager : MonoBehaviour
                 Debug.Log("삭제");
                 Debug.Log(talkData.Count);
                 talkIndex = 0;
-                Action();
+                Talk();
                 return null;
             }
             else 

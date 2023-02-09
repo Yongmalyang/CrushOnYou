@@ -158,6 +158,7 @@ MonoBehaviour:
   kw3: {fileID: 395762285}
   kw4: {fileID: 605928905}
   talkPanel: {fileID: 952126237}
+  SceneLoadBtn: {fileID: 368344749}
   TalkName: {fileID: 530803890}
   TalkText: {fileID: 585866891}
   isAction: 1
@@ -272,7 +273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &368344750
 RectTransform:
   m_ObjectHideFlags: 0
@@ -397,7 +398,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 368344749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89b42cb99c9270c48a3591665db5ab39, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f65c8a760798594c98b643214af998e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &395762283
@@ -1414,7 +1415,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 38556070}
           m_TargetAssemblyTypeName: TalkSceneManager, Assembly-CSharp
-          m_MethodName: Action
+          m_MethodName: Talk
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

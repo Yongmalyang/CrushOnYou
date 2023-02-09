@@ -6,6 +6,6 @@ using UnityEngine.SceneManagement;
 public class SceneLoadButton : MonoBehaviour
 {
     public void loadScene(){
-        SceneManager.LoadScene("PlaceScene");
+        SceneManager.LoadScene("PlaceScene_PSY");
     }
 }
