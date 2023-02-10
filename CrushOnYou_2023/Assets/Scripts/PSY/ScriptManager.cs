@@ -3,55 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ScriptManager
-{
-    public class TalkInfo{
-        public string name;
-        public List<string> talk;
-    }
-    public static Dictionary<string, TalkInfo> ScriptsInfo = new Dictionary<string, TalkInfo>(){
+{ 
+    public static Dictionary<string, List<string>> ScriptsInfo1 = new Dictionary<string, List<string>>(){
 
-        {"0운동", new TalkInfo{name = "배수정", talk = new List<string>(){"운동 선택했을 때", "레드가 하는 말"}}},
-        {"1운동", new TalkInfo{name = "도서준", talk = new List<string>(){"운동 선택했을 때", "블루가 하는 말"}}},
-        {"2운동", new TalkInfo{name = "장민혁", talk = new List<string>(){"운동 선택했을 때", "그린이 하는 말"}}},
-        {"3운동", new TalkInfo{name = "민예리", talk = new List<string>(){"운동 선택했을 때", "옐로가 하는 말"}}},
-        {"4운동", new TalkInfo{name = "송현주", talk = new List<string>(){"운동 선택했을 때", "핑크가 하는 말"}}},
-        {"5운동", new TalkInfo{name = "김연호", talk = new List<string>(){"운동 선택했을 때", "퍼플이 하는 말"}}},
+        {"True운동", new List<string>(){"운동 선택했을 때", "긍정이", "친밀도 상승"}},
+        {"False운동", new List<string>(){"음, 난 운동하는 거 별로 좋아하지 않아", "땀 나고 숨 차는 거 딱 질색이야", "(더 이상 이어나갈 이야기가 없습니다. 친밀도가 하락합니다.)"}},
 
-        {"0필름 카메라", new TalkInfo{name = "배수정", talk = new List<string>(){"필름카메라 선택했을 때", "레드가 하는 말"}}},
-        {"1필름 카메라", new TalkInfo{name = "도서준", talk = new List<string>(){"필름카메라 선택했을 때", "블루가 하는 말"}}},
-        {"2필름 카메라", new TalkInfo{name = "장민혁", talk = new List<string>(){"필름카메라 선택했을 때", "그린이 하는 말"}}},
-        {"3필름 카메라", new TalkInfo{name = "민예리", talk = new List<string>(){"필름카메라 선택했을 때", "옐로가 하는 말"}}},
-        {"4필름 카메라", new TalkInfo{name = "송현주", talk = new List<string>(){"필름카메라 선택했을 때", "핑크가 하는 말"}}},
-        {"5필름 카메라", new TalkInfo{name = "김연호", talk = new List<string>(){"필름카메라 선택했을 때", "퍼플이 하는 말"}}},
+        {"True필름 카메라", new List<string>(){"너 필름 카메라도 있어?", "긍정이", "친밀도 상승"}},
+        {"False필름 카메라", new List<string>(){"필름 카메라 선택했을 때", "부정이", "친밀도 하락"}},
 
-        {"0클래식 음악", new TalkInfo{name = "배수정", talk = new List<string>(){"클래식 음악 선택했을 때", "레드가 하는 말"}}},
-        {"1클래식 음악", new TalkInfo{name = "도서준", talk = new List<string>(){"클래식 음악 선택했을 때", "블루가 하는 말"}}},
-        {"2클래식 음악", new TalkInfo{name = "장민혁", talk = new List<string>(){"클래식 음악 선택했을 때", "그린이 하는 말"}}},
-        {"3클래식 음악", new TalkInfo{name = "민예리", talk = new List<string>(){"클래식 음악 선택했을 때", "옐로가 하는 말"}}},
-        {"4클래식 음악", new TalkInfo{name = "송현주", talk = new List<string>(){"클래식 음악 선택했을 때", "핑크가 하는 말"}}},
-        {"5클래식 음악", new TalkInfo{name = "김연호", talk = new List<string>(){"클래식 음악 선택했을 때", "퍼플이 하는 말"}}},
+        {"True클래식 음악", new List<string>(){"클래식 선택했을 때", "긍정이", "친밀도 상승"}},
+        {"False클래식 음악",new List<string>(){"클래식 선택했을 때", "부정이", "친밀도 하락"}},
 
-        {"0인디 음악", new TalkInfo{name = "배수정", talk = new List<string>(){"인디 음악 선택했을 때", "레드가 하는 말"}}},
-        {"1인디 음악", new TalkInfo{name = "도서준", talk = new List<string>(){"인디 음악 선택했을 때", "블루가 하는 말"}}},
-        {"2인디 음악", new TalkInfo{name = "장민혁", talk = new List<string>(){"인디 음악 선택했을 때", "그린이 하는 말"}}},
-        {"3인디 음악", new TalkInfo{name = "민예리", talk = new List<string>(){"인디 음악 선택했을 때", "옐로가 하는 말"}}},
-        {"4인디 음악", new TalkInfo{name = "송현주", talk = new List<string>(){"인디 음악 선택했을 때", "핑크가 하는 말"}}},
-        {"5인디 음악", new TalkInfo{name = "김연호", talk = new List<string>(){"인디 음악 선택했을 때", "퍼플이 하는 말"}}},
+        {"True인디 음악", new List<string>(){"인디 음악 선택했을 때", "긍정이", "친밀도 상승"}},
+        {"False인디 음악", new List<string>(){"인디 음악 선택했을 때", "부정이", "친밀도 하락"}},
 
-        {"0드라마", new TalkInfo{name = "배수정", talk = new List<string>(){"드라마 선택했을 때", "레드가 하는 말"}}},
-        {"1드라마", new TalkInfo{name = "도서준", talk = new List<string>(){"드라마 선택했을 때", "블루가 하는 말"}}},
-        {"2드라마", new TalkInfo{name = "장민혁", talk = new List<string>(){"드라마 선택했을 때", "그린이 하는 말"}}},
-        {"3드라마", new TalkInfo{name = "민예리", talk = new List<string>(){"드라마 선택했을 때", "옐로가 하는 말"}}},
-        {"4드라마", new TalkInfo{name = "송현주", talk = new List<string>(){"드라마 선택했을 때", "핑크가 하는 말"}}},
-        {"5드라마", new TalkInfo{name = "김연호", talk = new List<string>(){"드라마 선택했을 때", "퍼플이 하는 말"}}},
+        {"True드라마", new List<string>(){"드라마 선택했을 때", "긍정이", "친밀도 상승"}},
+        {"False드라마", new List<string>(){"드라마 선택했을 때", "부정이", "친밀도 하락"}},
 
-        {"0노래방", new TalkInfo{name = "배수정", talk = new List<string>(){"노래방 선택했을 때", "레드가 하는 말"}}},
-        {"1노래방", new TalkInfo{name = "도서준", talk = new List<string>(){"노래방 선택했을 때", "블루가 하는 말"}}},
-        {"2노래방", new TalkInfo{name = "장민혁", talk = new List<string>(){"노래방 선택했을 때", "그린이 하는 말"}}},
-        {"3노래방", new TalkInfo{name = "민예리", talk = new List<string>(){"노래방 선택했을 때", "옐로가 하는 말"}}},
-        {"4노래방", new TalkInfo{name = "송현주", talk = new List<string>(){"노래방 선택했을 때", "핑크가 하는 말"}}},
-        {"5노래방", new TalkInfo{name = "김연호", talk = new List<string>(){"노래방 선택했을 때", "퍼플이 하는 말"}}},
+        {"True노래방", new List<string>(){"노래방 선택했을 때", "긍정이", "친밀도 상승"}},
+        {"False노래방", new List<string>(){"노래방 선택했을 때", "부정이", "친밀도 하락"}},
 
+    };
+
+    public static Dictionary<string, List<string>> ScriptsInfo2 = new Dictionary<string, List<string>>(){
+
+        {"tt운동", new List<string>(){"나 요즘 운동 시작했어.", "오! 나도 관심있는데. 어떤 운동 해?", "(분위기가 좋아보입니다. 모두에 대한 친밀도가 상승합니다.)"}},
+        {"ff운동", new List<string>(){"운동? 난 운동은 잘 못해서...", "나도 운동은 별로 안좋아해.", "(두 사람이 공감대를 형성합니다. 서로에 대한 친밀도가 상승합니다.)"}},
+        {"tf운동", new List<string>(){"나 운동하는 거 정말 좋아하는데! 넌 어때?", "아아.. 난 운동 잘 못하기도 하고 별로 좋아하진 않아.", "(대화거리가 더 이상 없어보입니다. 서로에 대한 친밀도가 하락합니다.)"}},
+
+        {"tt필름 카메라", new List<string>(){"필카", "긍정긍정", "(분위기가 좋아보입니다. 모두에 대한 친밀도가 상승합니다.)"}},
+        {"ff필름 카메라", new List<string>(){"필카", "ㅂㅂ", "(두 사람이 공감대를 형성합니다. 서로에 대한 친밀도가 상승합니다.)"}},
+        {"tf필름 카메라", new List<string>(){"ㅍㅋ", "ㄱㅂ", "(대화거리가 더 이상 없어보입니다. 서로에 대한 친밀도가 하락합니다.)"}},
+
+        {"tt클래식 음악", new List<string>(){"클래식", "ㄱㄱ", "(분위기가 좋아보입니다. 모두에 대한 친밀도가 상승합니다.)"}},
+        {"ff클래식 음악", new List<string>(){"클래식", "ㅂㅂ", "(두 사람이 공감대를 형성합니다. 서로에 대한 친밀도가 상승합니다.)"}},
+        {"tf클래식 음악", new List<string>(){"클래식", "ㄱㅂ", "(대화거리가 더 이상 없어보입니다. 서로에 대한 친밀도가 하락합니다.)"}},
+
+        {"tt인디 음악", new List<string>(){"인디", "ㄱㄱ", "(분위기가 좋아보입니다. 모두에 대한 친밀도가 상승합니다.)"}},
+        {"ff인디 음악", new List<string>(){"인디", "ㅂㅂ", "(두 사람이 공감대를 형성합니다. 서로에 대한 친밀도가 상승합니다.)"}},
+        {"tf인디 음악", new List<string>(){"인디", "ㄱㅂ", "(대화거리가 더 이상 없어보입니다. 서로에 대한 친밀도가 하락합니다.)"}},
+
+        {"tt드라마", new List<string>(){"ㄷㄻ", "ㄱㄱ", "(분위기가 좋아보입니다. 모두에 대한 친밀도가 상승합니다.)"}},
+        {"ff드라마", new List<string>(){"ㄷㄻ", "ㅂㅂ", "(두 사람이 공감대를 형성합니다. 서로에 대한 친밀도가 상승합니다.)"}},
+        {"tf드라마", new List<string>(){"ㄷㄻ", "ㄱㅂ", "(대화거리가 더 이상 없어보입니다. 서로에 대한 친밀도가 하락합니다.)"}},
+
+        {"tt노래방", new List<string>(){"ㄴㄼ", "ㄱㄱ", "(분위기가 좋아보입니다. 모두에 대한 친밀도가 상승합니다.)"}},
+        {"ff노래방", new List<string>(){"ㄴㄼ", "ㅂㅂ", "(두 사람이 공감대를 형성합니다. 서로에 대한 친밀도가 상승합니다.)"}},
+        {"tf노래방", new List<string>(){"ㄴㄼ", "ㄱㅂ", "(대화거리가 더 이상 없어보입니다. 서로에 대한 친밀도가 하락합니다.)"}},
 
     };
 }
