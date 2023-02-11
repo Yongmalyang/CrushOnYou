@@ -62,18 +62,6 @@ public class TalkSceneManager : MonoBehaviour
     List<int> ppHere = new List<int>(); 
     //해당 장소에 있는 사람(0:red, 1:green, 2:blue, 3:yellow, 4:pink, 5:purple)
 
-    void Start()
-    {   
-        Keywords = new List<string>(KeyInfo.Keys);
-        talkData = new List<List<string>>();
-        ManageKeyword();
-        WhoAreHere();
-        kw1.text = toShow[0];
-        kw2.text = toShow[1];
-        kw3.text = toShow[2];
-        kw4.text = toShow[3];
-    }
-
     void WhoAreHere(){ //해당 장소에 있는 캐릭터 찾아서 ppHere에 저장
         for(int i=0; i<6; i++){
             if(DataManager.Data.place[i] == DataManager.Data.myPlace){
@@ -168,20 +156,36 @@ public class TalkSceneManager : MonoBehaviour
         DataManager.Data.LoveList = LoveList;
     }
 
+    
+    void Start()
+    {   
+        Keywords = new List<string>(KeyInfo.Keys);
+        talkData = new List<List<string>>();
+        Img = this.gameObject.AddComponent<ImageChange>();
+        ManageKeyword();
+        WhoAreHere();
+        kw1.text = toShow[0];
+        kw2.text = toShow[1];
+        kw3.text = toShow[2];
+        kw4.text = toShow[3];
+    }
+    
     ////////대사창
 
     public GameObject talkPanel;
     public GameObject SceneLoadBtn;
     public TMP_Text TalkName;
     public TMP_Text TalkText;
-    public GameObject TalkImage0;
+    public ImageChange Img;
     public bool isAction;
     public int talkIndex;
+    public string KW;
 
     public List<List<string>> talkData;
 
     void GenerateData(string ButtonName){
 
+        KW = ButtonName;
         string key;
 
         switch(ppHere.Count){
@@ -239,24 +243,28 @@ public class TalkSceneManager : MonoBehaviour
 
         if(ppHere.Count == 1){
             switch(talkIndex){
-                case 0 : SetImage(ppHere[0]); return SetName(ppHere[0]);
+                case 0 : Img.SetImage(ppHere[0], KeyInfo[KW].like[ppHere[0]]); 
+                         return SetName(ppHere[0]);
 
-                case 1 : SetImage(ppHere[0]); return SetName(ppHere[0]);
+                case 1 : Img.SetImage(ppHere[0], KeyInfo[KW].like[ppHere[0]]);
+                         return SetName(ppHere[0]);
 
-                case 2 : return "";
+                case 2 : Img.SetImage(10, true); return "";
                     
-                default : return "";    
+                default : Img.SetImage(10, true); return "";    
             }
         }
         else{
             switch(talkIndex){
-                case 0 : SetImage(ppHere[0]); return SetName(ppHere[0]);
+                case 0 : Img.SetImage(ppHere[0], KeyInfo[KW].like[ppHere[0]]); 
+                         return SetName(ppHere[0]);
 
-                case 1 : SetImage(ppHere[1]); return SetName(ppHere[1]);
+                case 1 : Img.SetImage(ppHere[1], KeyInfo[KW].like[ppHere[1]]); 
+                         return SetName(ppHere[1]);
 
-                case 2 : return "";
+                case 2 : Img.SetImage(10, true); return "";
                     
-                default : return "";    
+                default : Img.SetImage(10, true); return "";    
             }
         }
     }
@@ -271,14 +279,6 @@ public class TalkSceneManager : MonoBehaviour
         case 5 : return "김연호";
         }
         return "";
-    }
-
-    private void SetImage(int i){
-        TalkImage0.SetActive(false);
-        switch(i){
-            case 0 : TalkImage0.SetActive(true); break;
-            default : break;
-        }
     }
 
     public string GetTalk(){ //버튼 종류에 따라 대사 가져오기
