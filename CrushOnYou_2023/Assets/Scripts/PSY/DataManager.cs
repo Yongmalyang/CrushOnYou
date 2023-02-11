@@ -32,27 +32,27 @@ public class DataManager : MonoBehaviour
     public int[] RedLove; 
     public int[] GreenLove;
     public int[] BlueLove;
-    public int[] YellowLove;
-    public int[] PinkLove;
     public int[] PurpleLove;
+    public int[] PinkLove;
+    public int[] YellowLove;
 #endregion
     void setLove(){
 
         RedLove = new int[7]{0,0,0,0,0,0,0};
         GreenLove = new int[7]{0,0,0,0,0,0,0};
         BlueLove = new int[7]{0,0,0,0,0,0,0};
-        YellowLove = new int[7]{0,0,0,0,0,0,0};
-        PinkLove = new int[7]{0,0,0,0,0,0,0};
         PurpleLove = new int[7]{0,0,0,0,0,0,0};
+        PinkLove = new int[7]{0,0,0,0,0,0,0};
+        YellowLove = new int[7]{0,0,0,0,0,0,0};
 
     //ooLove = oo의 인덱스 0:red 1:green 2:blue 3:yellow 4:pink 5:purple 6:me 을 향한 호감도
 
         LoveList.Add(RedLove); 
         LoveList.Add(GreenLove);
         LoveList.Add(BlueLove);
-        LoveList.Add(YellowLove);
-        LoveList.Add(PinkLove);
         LoveList.Add(PurpleLove);
+        LoveList.Add(PinkLove);
+        LoveList.Add(YellowLove);
 
         for(int i=0; i<6; i++){
             for(int j=0; j<7; j++){

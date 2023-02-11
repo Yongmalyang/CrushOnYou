@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class ImageChange : MonoBehaviour
 {
-    public GameObject red, green, blue, yellow, pink, purple;
+    public GameObject red, green, blue, purple, pink, yellow;
     public List<GameObject> characters;
-    public Sprite[] redImg, greenImg, blueImg, yellowImg, pinkImg, purpleImg;
+    public Sprite[] redImg, greenImg, blueImg, purpleImg, pinkImg, yellowImg;
     public List<Sprite[]> images;
 
     // Start is called before the first frame update
@@ -20,16 +20,16 @@ public class ImageChange : MonoBehaviour
         pink = GameObject.FindGameObjectWithTag("pink");
         yellow = GameObject.FindGameObjectWithTag("yellow");
 
-        characters = new List<GameObject>{red, green, blue, yellow, pink, purple};
+        characters = new List<GameObject>{red, green, blue, purple, pink, yellow};
         
         redImg = Resources.LoadAll<Sprite>("RedImage");
         greenImg = Resources.LoadAll<Sprite>("GreenImage");
         blueImg = Resources.LoadAll<Sprite>("BlueImage");
-        yellowImg = Resources.LoadAll<Sprite>("YellowImage");
-        pinkImg = Resources.LoadAll<Sprite>("PinkImage");
         purpleImg = Resources.LoadAll<Sprite>("PurpleImage");
+        pinkImg = Resources.LoadAll<Sprite>("PinkImage");
+        yellowImg = Resources.LoadAll<Sprite>("YellowImage");
 
-        images = new List<Sprite[]>{redImg, greenImg, blueImg, yellowImg, pinkImg, purpleImg};
+        images = new List<Sprite[]>{redImg, greenImg, blueImg, purpleImg, pinkImg, yellowImg};
 
         for(int i=0; i<characters.Count; i++){
             characters[i].SetActive(false);

@@ -17,7 +17,7 @@ public class PlaceManager : MonoBehaviour
     void whereToGo(){
         
         int[] place = new int[6]; 
-        //red, green, blue, yellow, pink, purple 순서
+        //red, green, blue, purple, pink, yellow 순서
         //0:교실, 1:복도, 2:도서관, 3:음악실, 4:미술실, 5:체육관
         
         int[] count = new int[6] {0,0,0,0,0,0};

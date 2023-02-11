@@ -9,9 +9,9 @@ public class SelectPlace : MonoBehaviour
     public GameObject Red;
     public GameObject Green;
     public GameObject Blue;
-    public GameObject Yellow;
-    public GameObject Pink;
     public GameObject Purple;
+    public GameObject Pink;
+    public GameObject Yellow;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +19,9 @@ public class SelectPlace : MonoBehaviour
         if(DataManager.Data.place[0] != PlaceIndex) Red.SetActive(false);
         if(DataManager.Data.place[1] != PlaceIndex) Green.SetActive(false);
         if(DataManager.Data.place[2] != PlaceIndex) Blue.SetActive(false);
-        if(DataManager.Data.place[3] != PlaceIndex) Yellow.SetActive(false);
+        if(DataManager.Data.place[3] != PlaceIndex) Purple.SetActive(false);
         if(DataManager.Data.place[4] != PlaceIndex) Pink.SetActive(false);
-        if(DataManager.Data.place[5] != PlaceIndex) Purple.SetActive(false);
+        if(DataManager.Data.place[5] != PlaceIndex) Yellow.SetActive(false);
     }
     public void Select() {
 

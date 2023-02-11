@@ -36,7 +36,7 @@ public class TalkSceneManager : MonoBehaviour
         {"경제", new Keyword(){category = "issue", like = new bool[6]{false, true, true, false, true, false}}},
         {"연예인", new Keyword(){category = "issue", like = new bool[6]{true, false, false, true, true, true}}},
         {"베스트셀러", new Keyword(){category = "issue", like = new bool[6]{false, true, true, true, false, false}}},
-        {"패션 브랜드", new Keyword(){category = "issue", like = new bool[6]{true, false, false, true, true, true}}},
+        {"패션 트렌드", new Keyword(){category = "issue", like = new bool[6]{true, false, false, true, true, true}}},
         {"SNS", new Keyword(){category = "issue", like = new bool[6]{false, false, false, true, true, true}}},
         {"학교 수업", new Keyword(){category = "school", like = new bool[6]{false, true, true, false, true, true}}},
         {"수행평가", new Keyword(){category = "school", like = new bool[6]{false, false, true, true, true, false}}},
@@ -60,7 +60,7 @@ public class TalkSceneManager : MonoBehaviour
     List<string> toShow = new List<string>(); //선택된 4개 키워드 리스트
 
     List<int> ppHere = new List<int>(); 
-    //해당 장소에 있는 사람(0:red, 1:green, 2:blue, 3:yellow, 4:pink, 5:purple)
+    //해당 장소에 있는 사람(0:red, 1:green, 2:blue, 3:purple, 4:pink, 5:yellow)
 
     void WhoAreHere(){ //해당 장소에 있는 캐릭터 찾아서 ppHere에 저장
         for(int i=0; i<6; i++){
