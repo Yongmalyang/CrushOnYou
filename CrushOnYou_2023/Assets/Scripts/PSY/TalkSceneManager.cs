@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
-//수정함
 public class TalkSceneManager : MonoBehaviour
 {
     public GameObject Btns; //키워드 버튼 4개
@@ -164,6 +163,9 @@ public class TalkSceneManager : MonoBehaviour
         Img = this.gameObject.AddComponent<ImageChange>();
         ManageKeyword();
         WhoAreHere();
+        Debug.Log("실행2");
+        Intro();
+        
         kw1.text = toShow[0];
         kw2.text = toShow[1];
         kw3.text = toShow[2];
@@ -182,6 +184,14 @@ public class TalkSceneManager : MonoBehaviour
     public string KW;
 
     public List<List<string>> talkData;
+
+    void Intro(){
+
+        Btns.SetActive(false);
+        TalkName.text = SetName(ppHere[0]);
+        TalkText.text = "안녕, 무슨 일이야?";
+        Img.SetImage(ppHere[0], true);
+    }
 
     void GenerateData(string ButtonName){
 
@@ -227,15 +237,24 @@ public class TalkSceneManager : MonoBehaviour
 
     public void Talk(){ //대사 띄우고 대사 끝났는지 안끝났는지 확인
 
-        string line = GetTalk();
-        if(line == null) return;
+        if(Img.isIntro){
+            Btns.SetActive(true);
+            Img.characters[ppHere[0]].SetActive(false);
+            TalkName.text = "나";
+            TalkText.text = "(어떤 대화 주제를 꺼낼까?)";
+            Img.isIntro = false;
+        }
+        else{
+            string line = GetTalk();
+            if(line == null) return;
 
-        string name = GetName();
+            string name = GetName();
 
-        TalkName.text = name;
-        TalkText.text = line;
-        isAction = true;
-        talkIndex++;
+            TalkName.text = name;
+            TalkText.text = line;
+            isAction = true;
+            talkIndex++;
+        }
 
     }
 
@@ -249,22 +268,22 @@ public class TalkSceneManager : MonoBehaviour
                 case 1 : Img.SetImage(ppHere[0], KeyInfo[KW].like[ppHere[0]]);
                          return SetName(ppHere[0]);
 
-                case 2 : Img.SetImage(10, true); return "";
+                case 2 : Img.SetImage(10, true); return "나";
                     
-                default : Img.SetImage(10, true); return "";    
+                default : Img.SetImage(10, true); return "나";    
             }
         }
         else{
             switch(talkIndex){
-                case 0 : Img.SetImage(ppHere[0], KeyInfo[KW].like[ppHere[0]]); 
+                case 0 : Img.SetImage(ppHere[0], KeyInfo[KW].like[ppHere[0]]);  
                          return SetName(ppHere[0]);
 
                 case 1 : Img.SetImage(ppHere[1], KeyInfo[KW].like[ppHere[1]]); 
                          return SetName(ppHere[1]);
 
-                case 2 : Img.SetImage(10, true); return "";
+                case 2 : Img.SetImage(10, true); return "나";
                     
-                default : Img.SetImage(10, true); return "";    
+                default : Img.SetImage(10, true); return "나";    
             }
         }
     }
@@ -283,6 +302,10 @@ public class TalkSceneManager : MonoBehaviour
 
     public string GetTalk(){ //버튼 종류에 따라 대사 가져오기
 
+        if(talkData.Count == 0){
+            return null;
+        }
+        
         if(talkIndex == talkData[0].Count){
             talkPanel.SetActive(false);
             SceneLoadBtn.SetActive(true);

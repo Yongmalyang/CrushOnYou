@@ -173,6 +173,7 @@ MonoBehaviour:
   kw3: {fileID: 395762285}
   kw4: {fileID: 605928905}
   talkPanel: {fileID: 952126237}
+  namePanel: {fileID: 1309503259}
   SceneLoadBtn: {fileID: 368344749}
   TalkName: {fileID: 530803890}
   TalkText: {fileID: 585866891}

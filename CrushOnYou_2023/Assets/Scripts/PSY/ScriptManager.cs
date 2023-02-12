@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ScriptManager
-{ 
+{
     public static Dictionary<string, List<string>> ScriptsInfo1 = new Dictionary<string, List<string>>(){
 
         {"True운동", new List<string>(){"운동 선택했을 때", "긍정이", "친밀도 상승"}},

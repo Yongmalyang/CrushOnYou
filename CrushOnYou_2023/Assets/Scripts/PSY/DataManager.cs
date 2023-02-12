@@ -45,7 +45,7 @@ public class DataManager : MonoBehaviour
         PinkLove = new int[7]{0,0,0,0,0,0,0};
         YellowLove = new int[7]{0,0,0,0,0,0,0};
 
-    //ooLove = oo의 인덱스 0:red 1:green 2:blue 3:yellow 4:pink 5:purple 6:me 을 향한 호감도
+    //ooLove = oo의 인덱스 0:red 1:green 2:blue 3:purple 4:pink 5:yellow 6:me 을 향한 호감도
 
         LoveList.Add(RedLove); 
         LoveList.Add(GreenLove);

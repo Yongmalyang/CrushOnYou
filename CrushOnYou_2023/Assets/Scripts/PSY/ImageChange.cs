@@ -9,9 +9,10 @@ public class ImageChange : MonoBehaviour
     public List<GameObject> characters;
     public Sprite[] redImg, greenImg, blueImg, purpleImg, pinkImg, yellowImg;
     public List<Sprite[]> images;
+    public bool isIntro = true;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         red = GameObject.FindGameObjectWithTag("red");
         green = GameObject.FindGameObjectWithTag("green");
@@ -34,11 +35,19 @@ public class ImageChange : MonoBehaviour
         for(int i=0; i<characters.Count; i++){
             characters[i].SetActive(false);
         }
+
+        Debug.Log("실행1");
     }
 
     public void SetImage(int pp, bool like){
         for(int i=0; i<characters.Count; i++){
             characters[i].SetActive(false);
+        }
+
+        if(isIntro){
+            characters[pp].GetComponent<Image>().sprite = images[pp][0];
+            characters[pp].SetActive(true);
+            return;
         }
 
         if(pp<characters.Count){
