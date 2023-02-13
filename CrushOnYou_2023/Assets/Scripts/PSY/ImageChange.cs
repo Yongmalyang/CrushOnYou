@@ -35,8 +35,6 @@ public class ImageChange : MonoBehaviour
         for(int i=0; i<characters.Count; i++){
             characters[i].SetActive(false);
         }
-
-        Debug.Log("실행1");
     }
 
     public void SetImage(int pp, bool like){

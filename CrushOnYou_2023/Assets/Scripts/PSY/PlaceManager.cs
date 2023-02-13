@@ -9,7 +9,7 @@ public class PlaceManager : MonoBehaviour
     void Awake()
     {
         if(DataController.Instance.gameData.maxTurn == DataController.Instance.gameData.turn){ 
-            SceneManager.LoadScene("Ending_PSY");
+            SceneManager.LoadScene("SelectFinal_PSY");
         }//14턴 진행하면 엔딩화면으로 이동
         whereToGo();
     }

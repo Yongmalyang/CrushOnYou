@@ -154,7 +154,6 @@ public class DataController : MonoBehaviour
         for(int i=0; i<6; i++){
             for(int j=0; j<7; j++){
                 this.gameData.LoveList[i][j] = UnityEngine.Random.Range(2,6)*10;
-                Debug.Log(gameData.LoveList[i][j]);
             }
             this.gameData.LoveList[i][i] = 0;
             if(this.gameData.loveWho[i] != 7){
@@ -176,6 +175,9 @@ public class DataController : MonoBehaviour
         public int turn; //현재 턴
         public int[] place; //캐릭터별 장소
         public int[] count; //장소별
+        public int finalLover; //최종 이어질 사람
+        public int endingNum; //엔딩 종류 
+        //0:선택한사람+해피 1:선택한사람+노말 2:선택한사람+새드 3: 선택x+해피 4:선택x+노말 5:선택x+새드 6:아무도날안좋아함
 
         public int[] loveWho; //임시로 넣음 추리턴에서 받아와야됨!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

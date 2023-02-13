@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ending_PSY.unity
     guid: 8ba29d921e2d6a848a57637c6796e450
+  - enabled: 1
+    path: Assets/Scenes/SelectFinal_PSY.unity
+    guid: c2fcc2c9ef613a24295669293eff8750
   m_configObjects: {}
