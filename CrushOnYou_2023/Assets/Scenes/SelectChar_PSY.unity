@@ -518,7 +518,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 578680661}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -643,39 +643,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 595891254}
-  - component: {fileID: 595891253}
+  - component: {fileID: 595891255}
   m_Layer: 0
-  m_Name: DataManager
+  m_Name: DataController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &595891253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 595891252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d614c19fbd6eb2843aad3efeec193677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myLover: 0
-  myPlace: 0
-  maxTurn: 14
-  turn: 0
-  place: 
-  count: 
-  loveWho: 010000000200000003000000040000000500000007000000
-  RedLove: 
-  GreenLove: 
-  BlueLove: 
-  PurpleLove: 
-  PinkLove: 
-  YellowLove: 
 --- !u!4 &595891254
 Transform:
   m_ObjectHideFlags: 0
@@ -691,6 +666,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &595891255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595891252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e10d8345e54a1174b88cb3094d35093e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameData:
+    playedBefore: 0
+    CharacterList: []
+    myLover: 0
+    myPlace: 0
+    maxTurn: 14
+    turn: 0
+    place: 
+    count: 
+    loveWho: 010000000200000003000000040000000500000007000000
+    RedLove: 
+    GreenLove: 
+    BlueLove: 
+    PurpleLove: 
+    PinkLove: 
+    YellowLove: 
 --- !u!1 &653435647
 GameObject:
   m_ObjectHideFlags: 0

@@ -82,11 +82,14 @@ public class DataController : MonoBehaviour
 
     void Start()
     {
+
         if (PlayerPrefs.HasKey("key") == true)
         {
             if (gameObject.name == "DataControllerF")
                 GameObject.Find("DataControllerF").SetActive(false);
         }
+
+        setLove(); //0213 추가
 
         if (PlayerPrefs.HasKey("key") == false) // 최초실행이면
         {
@@ -98,7 +101,6 @@ public class DataController : MonoBehaviour
             if (gameObject.name == "DataControllerF")
                 GameObject.Find("DataControllerF").SetActive(false);
         }
-
 
     }
 
@@ -131,11 +133,61 @@ public class DataController : MonoBehaviour
 
     }
 
+    void setLove(){ //0213 추가 공략턴 호감도 생성
+
+        this.gameData.RedLove = new int[7]{0,0,0,0,0,0,0};
+        this.gameData.GreenLove = new int[7]{0,0,0,0,0,0,0};
+        this.gameData.BlueLove = new int[7]{0,0,0,0,0,0,0};
+        this.gameData.PurpleLove = new int[7]{0,0,0,0,0,0,0};
+        this.gameData.PinkLove = new int[7]{0,0,0,0,0,0,0};
+        this.gameData.YellowLove = new int[7]{0,0,0,0,0,0,0};
+
+    //ooLove = oo의 인덱스 0:red 1:green 2:blue 3:purple 4:pink 5:yellow 6:me 을 향한 호감도
+
+        this.gameData.LoveList.Add(DataController.Instance.gameData.RedLove); 
+        this.gameData.LoveList.Add(DataController.Instance.gameData.GreenLove);
+        this.gameData.LoveList.Add(DataController.Instance.gameData.BlueLove);
+        this.gameData.LoveList.Add(DataController.Instance.gameData.PurpleLove);
+        this.gameData.LoveList.Add(DataController.Instance.gameData.PinkLove);
+        this.gameData.LoveList.Add(DataController.Instance.gameData.YellowLove);
+
+        for(int i=0; i<6; i++){
+            for(int j=0; j<7; j++){
+                this.gameData.LoveList[i][j] = UnityEngine.Random.Range(2,6)*10;
+                Debug.Log(gameData.LoveList[i][j]);
+            }
+            this.gameData.LoveList[i][i] = 0;
+            if(this.gameData.loveWho[i] != 7){
+                this.gameData.LoveList[i][this.gameData.loveWho[i]] = UnityEngine.Random.Range(6,8)*10;
+            }
+        }
+    }
+
     [System.Serializable]
     public class GameData
     {
         public bool playedBefore = false;
         public List<Character> CharacterList = new List<Character>();
+
+#region 0213추가 공략턴 데이터
+        public int myLover; //내가 공략할 사람
+        public int myPlace; //내가 선택한 장소
+        public int maxTurn; //최대 턴(14)
+        public int turn; //현재 턴
+        public int[] place; //캐릭터별 장소
+        public int[] count; //장소별
+
+        public int[] loveWho; //임시로 넣음 추리턴에서 받아와야됨!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        public List<int[]> LoveList = new List<int[]>(); //호감도 저장 리스트
+
+        public int[] RedLove; 
+        public int[] GreenLove;
+        public int[] BlueLove;
+        public int[] PurpleLove;
+        public int[] PinkLove;
+        public int[] YellowLove;
+#endregion
 
     }
 

@@ -381,6 +381,7 @@
 "Assets/Scripts/LJY/ChangeScene.cs"
 "Assets/Scripts/LJY/SelectEpisode_LJY.cs"
 "Assets/Scripts/PHJ/DataMgr.cs"
+"Assets/Scripts/PSY/Background.cs"
 "Assets/Scripts/PSY/DataManager.cs"
 "Assets/Scripts/PSY/ImageChange.cs"
 "Assets/Scripts/PSY/PlaceManager.cs"

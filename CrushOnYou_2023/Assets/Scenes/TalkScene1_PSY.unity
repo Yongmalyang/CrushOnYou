@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 38556071}
   - component: {fileID: 38556072}
+  - component: {fileID: 38556073}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -173,7 +174,6 @@ MonoBehaviour:
   kw3: {fileID: 395762285}
   kw4: {fileID: 605928905}
   talkPanel: {fileID: 952126237}
-  namePanel: {fileID: 1309503259}
   SceneLoadBtn: {fileID: 368344749}
   TalkName: {fileID: 530803890}
   TalkText: {fileID: 585866891}
@@ -181,6 +181,25 @@ MonoBehaviour:
   isAction: 1
   talkIndex: 0
   KW: 
+--- !u!114 &38556073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38556069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dae0289b4f0595b4ba58ca462bf896ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BackPanel: {fileID: 316899845}
+  classroom: []
+  hall: []
+  lib: []
+  music: []
+  art: []
+  gym: []
 --- !u!1 &316899845
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +212,7 @@ GameObject:
   - component: {fileID: 316899848}
   - component: {fileID: 316899847}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

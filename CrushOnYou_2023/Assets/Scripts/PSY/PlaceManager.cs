@@ -8,7 +8,7 @@ public class PlaceManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        if(DataManager.Data.maxTurn == DataManager.Data.turn){ 
+        if(DataController.Instance.gameData.maxTurn == DataController.Instance.gameData.turn){ 
             SceneManager.LoadScene("Ending_PSY");
         }//14턴 진행하면 엔딩화면으로 이동
         whereToGo();
@@ -33,8 +33,8 @@ public class PlaceManager : MonoBehaviour
             }
             
         }
-        DataManager.Data.count = count;
-        DataManager.Data.place = place;
+        DataController.Instance.gameData.count = count;
+        DataController.Instance.gameData.place = place;
     }
 
 }

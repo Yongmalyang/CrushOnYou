@@ -63,7 +63,7 @@ public class TalkSceneManager : MonoBehaviour
 
     void WhoAreHere(){ //해당 장소에 있는 캐릭터 찾아서 ppHere에 저장
         for(int i=0; i<6; i++){
-            if(DataManager.Data.place[i] == DataManager.Data.myPlace){
+            if(DataController.Instance.gameData.place[i] == DataController.Instance.gameData.myPlace){
                 ppHere.Add(i);
             }
         }
@@ -96,7 +96,7 @@ public class TalkSceneManager : MonoBehaviour
 
         int key = i; //사용자가 누른 버튼 번호 ex) toShow[i].ch -> 해당 키워드를 좋아하는 캐릭터
         int e = 10; //호감도 변화 정도
-        List<int[]> LoveList = DataManager.Data.LoveList;
+        List<int[]> LoveList = DataController.Instance.gameData.LoveList;
 
         void increaseLove(int a, int b){
             LoveList[a][b] += e;
@@ -152,7 +152,7 @@ public class TalkSceneManager : MonoBehaviour
             break;
         }
 
-        DataManager.Data.LoveList = LoveList;
+        DataController.Instance.gameData.LoveList = LoveList;
     }
 
     

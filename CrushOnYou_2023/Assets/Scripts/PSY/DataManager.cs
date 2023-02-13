@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
-    // 수정함!!
+    // 0213 DataController로 다 옮김 이제 안 씀!!!!!
 
     public static DataManager Data;
     private void Awake() {
@@ -22,7 +22,9 @@ public class DataManager : MonoBehaviour
     public int maxTurn; //최대 턴(14)
     public int turn; //현재 턴
     public int[] place; //캐릭터별 장소
-    public int[] count; //장소별 인원수
+    public int[] count; //장소별 
+    
+    //DataController.Instance.gameData.
 
     public int[] loveWho; //추리턴에서 받아와야됨!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
