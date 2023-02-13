@@ -268,9 +268,9 @@ public class TalkSceneManager : MonoBehaviour
                 case 1 : Img.SetImage(ppHere[0], KeyInfo[KW].like[ppHere[0]]);
                          return SetName(ppHere[0]);
 
-                case 2 : Img.SetImage(10, true); return "나";
+                case 2 : Img.SetImage(10, true); return "";
                     
-                default : Img.SetImage(10, true); return "나";    
+                default : Img.SetImage(10, true); return "";    
             }
         }
         else{
@@ -281,21 +281,21 @@ public class TalkSceneManager : MonoBehaviour
                 case 1 : Img.SetImage(ppHere[1], KeyInfo[KW].like[ppHere[1]]); 
                          return SetName(ppHere[1]);
 
-                case 2 : Img.SetImage(10, true); return "나";
+                case 2 : Img.SetImage(10, true); return "";
                     
-                default : Img.SetImage(10, true); return "나";    
+                default : Img.SetImage(10, true); return "";    
             }
         }
     }
 
     private string SetName(int i){
         switch(i){ 
-        case 0 : return "배수정"; 
-        case 1 : return "도서준";
-        case 2 : return "장민혁";
-        case 3 : return "민예리";
-        case 4 : return "송현주";
-        case 5 : return "김연호";
+        case 0 : return "가영"; 
+        case 1 : return "서준";
+        case 2 : return "테오";
+        case 3 : return "유이";
+        case 4 : return "하나";
+        case 5 : return "시우";
         }
         return "";
     }

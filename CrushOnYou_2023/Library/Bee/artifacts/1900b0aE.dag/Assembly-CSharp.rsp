@@ -383,6 +383,7 @@
 "Assets/Scripts/PHJ/DataMgr.cs"
 "Assets/Scripts/PSY/Background.cs"
 "Assets/Scripts/PSY/DataManager.cs"
+"Assets/Scripts/PSY/EndingScene.cs"
 "Assets/Scripts/PSY/ImageChange.cs"
 "Assets/Scripts/PSY/PlaceManager.cs"
 "Assets/Scripts/PSY/SceneLoadButton.cs"
