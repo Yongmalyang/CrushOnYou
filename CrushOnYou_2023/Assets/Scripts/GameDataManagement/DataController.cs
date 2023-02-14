@@ -133,7 +133,7 @@ public class DataController : MonoBehaviour
 
     }
 
-    void setLove(){ //0213 추가 공략턴 호감도 생성
+    void setLove(){ //0213 추가 공략턴 호감도 생성 함수
 
         this.gameData.RedLove = new int[7]{0,0,0,0,0,0,0};
         this.gameData.GreenLove = new int[7]{0,0,0,0,0,0,0};
@@ -143,6 +143,7 @@ public class DataController : MonoBehaviour
         this.gameData.YellowLove = new int[7]{0,0,0,0,0,0,0};
 
     //ooLove = oo의 인덱스 0:red 1:green 2:blue 3:purple 4:pink 5:yellow 6:me 을 향한 호감도
+    //ex) RedLove가 {0,10,20,30,40,50,60}일 때 레드의 나를 향한 호감도는 60
 
         this.gameData.LoveList.Add(DataController.Instance.gameData.RedLove); 
         this.gameData.LoveList.Add(DataController.Instance.gameData.GreenLove);

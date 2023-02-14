@@ -17,7 +17,7 @@ public class DataManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public int myLover; //내가 공략할 사람
+    public int myLover; //내가 공략하기로 선택한 사람
     public int myPlace; //내가 선택한 장소
     public int maxTurn; //최대 턴(14)
     public int turn; //현재 턴

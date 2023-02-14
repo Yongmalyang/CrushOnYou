@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SelectFinal : MonoBehaviour
 {
-    public int CharIndex;
+    public int CharIndex; //캐릭터 인덱스
     public GameObject EndingButton;
     public GameObject characters;
     List<int []> LoveList;
@@ -12,11 +13,11 @@ public class SelectFinal : MonoBehaviour
     void Start(){
         LoveList = DataController.Instance.gameData.LoveList;
     }
-    public void Select() {
+    public void Select() { //후보 캐릭터 선택했을 때 실행되는 함수
 
         DataController.Instance.gameData.finalLover = CharIndex; //선택한 캐릭터의 번호 저장
         
-        int like = LoveList[DataController.Instance.gameData.finalLover][6];
+        int like = LoveList[DataController.Instance.gameData.finalLover][6]; //선택한 캐릭터 호감도에 따라 엔딩 결정
             int endingNum;
             if(like < 50) endingNum = 6;
             else if(like>=50 && like<70){
@@ -40,8 +41,8 @@ public class SelectFinal : MonoBehaviour
 
             DataController.Instance.gameData.endingNum = endingNum;
             Debug.Log(endingNum);
-            characters.SetActive(false);
-            EndingButton.SetActive(true);
+            
+            EndingButton.SetActive(true); //엔딩 화면으로 넘어가는 버튼
         
     }
 }

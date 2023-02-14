@@ -4,15 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
-public class EndingManager : MonoBehaviour
+public class EndingManager : MonoBehaviour //엔딩 이전 화면에 적용되는 스크립트
 {
     public GameObject red, blue, green, purple, pink, yellow;
     List<GameObject> characters;
 
-    public List<int []> LoveList;
-    public List<int> tempLover;
-    public List<int> favorites;
+    public List<int []> LoveList; //DataController에서 받아와서 쓸 변수(이름 길어서)
+    public List<int> tempLover; //최종러버 후보들
+    public List<int> favorites; //나를 제일 좋아하는 캐릭터들
     public GameObject EndingButton;
+    public GameObject text;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +29,7 @@ public class EndingManager : MonoBehaviour
         SetEnding();
     }
 
-    void SetFavorites(){
+    void SetFavorites(){ //나를 제일 좋아하는 캐릭터들 favorites에 저장
         
         for(int i=0; i<6; i++){
             
@@ -44,18 +46,17 @@ public class EndingManager : MonoBehaviour
         Debug.Log(favorites.Count);
     }
 
-    void SetTempLover(){
+    void SetTempLover(){ //최종러버 후보들 저장
+                         //favorites 중에 나를 향한 호감도가 똑같은 캐릭터가 여러명일 경우 떄문에
 
         if(favorites.Count == 0){
-            DataController.Instance.gameData.finalLover = 6; //걍 배드
-            DataController.Instance.gameData.endingNum = 6;
+            DataController.Instance.gameData.finalLover = 6; //아무도 날 안좋아할 때
+            DataController.Instance.gameData.endingNum = 6; //6번 엔딩으로 결정
         }
         else{
             int max = 0;
             for(int i=0; i<favorites.Count; i++){
                 
-                //Debug.Log(favorites[i]);
-                //Debug.Log(LoveList[max][6]);
                 if(LoveList[favorites[i]][6] > LoveList[max][6]){
                     max = favorites[i];
                     tempLover.Clear();
@@ -71,8 +72,8 @@ public class EndingManager : MonoBehaviour
         Debug.Log(tempLover.Count);
     }
 
-    void SetEnding(){
-        if(tempLover.Count == 1){
+    void SetEnding(){ //엔딩 종류 결정
+        if(tempLover.Count == 1){ //최종러버 후보가 한명인 경우 바로 호감도에 따라 엔딩 결정
             DataController.Instance.gameData.finalLover = tempLover[0];
             int like = LoveList[tempLover[0]][6];
             int endingNum;
@@ -99,12 +100,13 @@ public class EndingManager : MonoBehaviour
             DataController.Instance.gameData.endingNum = endingNum;
             Debug.Log(endingNum);
         }
-        else if(tempLover.Count == 0) return;
-        else{
+        else if(tempLover.Count == 0) return; //아무도 날 안좋아하면 리턴
+        else{//후보가 여러명인 경우
             EndingButton.SetActive(false);
             for(int i=0; i<characters.Count; i++){
-                if(tempLover.Contains(i)){
+                if(tempLover.Contains(i)){ //후보들 화면에 띄우기
                     characters[i].SetActive(true);
+                    text.SetActive(true);
                 }
             }
         }
