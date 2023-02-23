@@ -8,34 +8,11 @@ using TMPro;
 public class ManagerScript : MonoBehaviour
 {
     public string mark = "O";
-    public GameObject targetObject;
+    public GameObject Note;
 
-    public void setNote()
+    private void Update()
     {
-        string ButtonName = EventSystem.current.currentSelectedGameObject.name;
-        if (ButtonName == "BookMarkInference")
-        {
-            targetObject = GameObject.FindWithTag("Profile");
-            //targetObject.gameObject.SetActive(false);
-            Debug.Log(targetObject.GetComponent<TextMeshProUGUI>().text);
-        }
-        else if (ButtonName == "BookMarkSubmit")
-        {
-            /*targetObject = GameObject.Find("Profile");
-            targetObject.gameObject.SetActive(false);
-            targetObject = GameObject.Find("Inference");
-            targetObject.gameObject.SetActive(false);*/
-            Debug.Log(targetObject.GetComponent<TextMeshProUGUI>().text);
-        }
-        else if(ButtonName == "BookMarkProfile")
-        {
-            /*targetObject = GameObject.Find("Profile");
-            targetObject.gameObject.SetActive(true);*/
-            Debug.Log(targetObject.GetComponent<TextMeshProUGUI>().text);
-        }
-        Debug.Log("Note Changed");
     }
-
     public void GetButtonName()
     {
         string ButtonName = EventSystem.current.currentSelectedGameObject.name;
@@ -69,4 +46,35 @@ public class ManagerScript : MonoBehaviour
             clickedButton.GetComponentInChildren<TextMeshProUGUI>().text = mark;
         }
     }
+
+    //추리턴함수
+    public void GuessNoteOpenClose()
+    {
+        Note = GameObject.Find("UI").transform.Find("Note").gameObject;
+        if (Note.activeSelf == false)
+        {
+            GameObject.Find("UI").transform.Find("Note").gameObject.SetActive(true);
+        }
+        else
+        {
+            GameObject.Find("UI").transform.Find("Note").gameObject.SetActive(false);
+        }
+    }
+
+
+    //공략턴 함수
+    public void FlirtNoteOpenClose()
+    {
+        Note = GameObject.Find("Panel").transform.Find("Note").gameObject;
+        if (Note.activeSelf == false)
+        {
+            GameObject.Find("Panel").transform.Find("Note").gameObject.SetActive(true);
+        }
+        else
+        {
+            GameObject.Find("Panel").transform.Find("Note").gameObject.SetActive(false);
+        }
+    }
+
+
 }

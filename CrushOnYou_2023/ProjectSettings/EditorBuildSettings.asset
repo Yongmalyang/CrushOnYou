@@ -7,11 +7,47 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Start_LJY.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: 20686c0a35b61144abaae21470689922
   - enabled: 1
-    path: Assets/Scenes/AnswerSubmit.unity
-    guid: ec3da2678c16cf94aa3f900e8d28035e
+    path: Assets/Scenes/Credit.unity
+    guid: ca9e65b7bf97d5f479cd5da29200f293
   - enabled: 1
-    path: Assets/Scenes/EpisodeSelect_LJY.unity
-    guid: b76e19eb5b541134f8314d2508036025
+    path: Assets/Scenes/Ending_PSY.unity
+    guid: 8ba29d921e2d6a848a57637c6796e450
+  - enabled: 1
+    path: Assets/Scenes/Epi1Done.unity
+    guid: 621615784a0140543a79bdb40055ebda
+  - enabled: 1
+    path: Assets/Scenes/EpiSelectNew.unity
+    guid: 259e02273acab0f4f91c1d0a7987cd23
+  - enabled: 1
+    path: Assets/Scenes/FlirtNote.unity
+    guid: b08faf5fd0fdb934e86491f2734e54e7
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: a975b3cf43a72124c915755a6e3a1b3b
+  - enabled: 1
+    path: Assets/Scenes/Guess.unity
+    guid: 2ebf4dc7634a30d4f9380a66d8eb2f27
+  - enabled: 1
+    path: Assets/Scenes/GuessNote.unity
+    guid: 4a65e52118b3bca48ac6e143c0277767
+  - enabled: 1
+    path: Assets/Scenes/PlaceScene_PSY.unity
+    guid: 1db4e14d562effa47a7ef5aa8400d20d
+  - enabled: 1
+    path: Assets/Scenes/Prologue.unity
+    guid: f1eb91a38139863468ca28033bb16278
+  - enabled: 1
+    path: Assets/Scenes/SelectChar_PSY.unity
+    guid: 7330b3ec2cd8e854cbd2191c292422a1
+  - enabled: 1
+    path: Assets/Scenes/SelectFinal_PSY.unity
+    guid: c2fcc2c9ef613a24295669293eff8750
+  - enabled: 1
+    path: Assets/Scenes/TalkScene0_PSY.unity
+    guid: c3d8ad8c760a9c14ca7a67ab6304fe00
+  - enabled: 1
+    path: Assets/Scenes/TalkScene1_PSY.unity
+    guid: 1aa37e421792ea94da8ec57caee4b3f3
   m_configObjects: {}
