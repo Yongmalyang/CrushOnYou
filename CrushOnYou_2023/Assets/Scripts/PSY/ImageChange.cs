@@ -37,14 +37,16 @@ public class ImageChange : MonoBehaviour
         }
     }
 
-    public void SetImage(int pp, bool like){
+    public void SetImage(List<int> ppHere, int pp, bool like){
         for(int i=0; i<characters.Count; i++){
             characters[i].SetActive(false);
         }
 
         if(isIntro){
-            characters[pp].GetComponent<Image>().sprite = images[pp][0];
-            characters[pp].SetActive(true);
+            for(int i=0; i<ppHere.Count; i++){
+                characters[ppHere[i]].GetComponent<Image>().sprite = images[ppHere[i]][0];
+                characters[ppHere[i]].SetActive(true);
+            }
             return;
         }
 

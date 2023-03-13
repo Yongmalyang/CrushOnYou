@@ -9,6 +9,7 @@ public class TalkSceneManager : MonoBehaviour
 {
     public GameObject Btns; //키워드 버튼 4개
 
+
     class Keyword //키워드, 키워드를 좋아하는 캐릭터 번호
     {
         public string category;
@@ -55,6 +56,10 @@ public class TalkSceneManager : MonoBehaviour
     public TMP_Text kw2;
     public TMP_Text kw3;
     public TMP_Text kw4;
+    public TMP_Text kw5;
+    public TMP_Text kw6;
+    public TMP_Text kw7;
+    public TMP_Text kw8;
 
     List<string> toShow = new List<string>(); //선택된 4개 키워드 리스트
 
@@ -80,6 +85,7 @@ public class TalkSceneManager : MonoBehaviour
             }
         }
     }
+
 
     public void SelectKeyword(){ //사용자가 키워드 버튼 눌렀을 때
         string ButtonName = EventSystem.current.currentSelectedGameObject.name;
@@ -165,6 +171,18 @@ public class TalkSceneManager : MonoBehaviour
         WhoAreHere();
         Debug.Log("실행2");
         Intro();
+
+        if(ppHere.Count >1){
+            Btns = GameObject.Find("Keyword2");
+            kw5.text = toShow[0];
+            kw6.text = toShow[1];
+            kw7.text = toShow[2];
+            kw8.text = toShow[3];
+            Btns.SetActive(false);   
+        }
+        else{
+            GameObject.Find("Keyword2").SetActive(false);
+        }
         
         kw1.text = toShow[0];
         kw2.text = toShow[1];
@@ -192,7 +210,7 @@ public class TalkSceneManager : MonoBehaviour
         Btns.SetActive(false);
         TalkName.text = SetName(ppHere[0]);
         TalkText.text = "안녕, 무슨 일이야?";
-        Img.SetImage(ppHere[0], true);
+        Img.SetImage(ppHere, 10, true);
     }
 
     void GenerateData(string ButtonName){
@@ -267,28 +285,28 @@ public class TalkSceneManager : MonoBehaviour
 
         if(ppHere.Count == 1){
             switch(talkIndex){
-                case 0 : Img.SetImage(ppHere[0], KeyInfo[KW].like[ppHere[0]]); 
+                case 0 : Img.SetImage(ppHere, ppHere[0], KeyInfo[KW].like[ppHere[0]]); 
                          return SetName(ppHere[0]);
 
-                case 1 : Img.SetImage(ppHere[0], KeyInfo[KW].like[ppHere[0]]);
+                case 1 : Img.SetImage(ppHere, ppHere[0], KeyInfo[KW].like[ppHere[0]]);
                          return SetName(ppHere[0]);
 
-                case 2 : Img.SetImage(10, true); return "";
+                case 2 : Img.SetImage(ppHere, 10, true); return "";
                     
-                default : Img.SetImage(10, true); return "";    
+                default : Img.SetImage(ppHere, 10, true); return "";    
             }
         }
         else{
             switch(talkIndex){
-                case 0 : Img.SetImage(ppHere[0], KeyInfo[KW].like[ppHere[0]]);  
+                case 0 : Img.SetImage(ppHere, ppHere[0], KeyInfo[KW].like[ppHere[0]]);  
                          return SetName(ppHere[0]);
 
-                case 1 : Img.SetImage(ppHere[1], KeyInfo[KW].like[ppHere[1]]); 
+                case 1 : Img.SetImage(ppHere, ppHere[1], KeyInfo[KW].like[ppHere[1]]); 
                          return SetName(ppHere[1]);
 
-                case 2 : Img.SetImage(10, true); return "";
+                case 2 : Img.SetImage(ppHere, 10, true); return "";
                     
-                default : Img.SetImage(10, true); return "";    
+                default : Img.SetImage(ppHere, 10, true); return "";    
             }
         }
     }

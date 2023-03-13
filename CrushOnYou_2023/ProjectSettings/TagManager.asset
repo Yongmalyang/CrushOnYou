@@ -10,6 +10,10 @@ TagManager:
   - purple
   - pink
   - yellow
+  - Profile
+  - Submit
+  - Inference
+  - kw2
   layers:
   - Default
   - TransparentFX
