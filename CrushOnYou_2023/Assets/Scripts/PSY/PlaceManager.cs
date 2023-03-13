@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlaceManager : MonoBehaviour
 {
+    public GameObject BackPanel;
+    public Sprite[] Backgrounds;
+    //private GameObject CamObject;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -12,6 +17,9 @@ public class PlaceManager : MonoBehaviour
             SceneManager.LoadScene("SelectFinal_PSY");
         }//14턴 진행하면 엔딩화면으로 이동
         whereToGo();
+        Backgrounds = Resources.LoadAll<Sprite>("PlaceSceneBack");
+        ManageFromTurn();
+        //CamObject = GameObject.Find("Main Camera");
     }
 
     void whereToGo(){
@@ -35,6 +43,25 @@ public class PlaceManager : MonoBehaviour
         }
         DataController.Instance.gameData.count = count;
         DataController.Instance.gameData.place = place;
+    }
+    void ManageFromTurn(){
+        
+        if(DataController.Instance.gameData.turn<5){
+            BackPanel.GetComponent<Image>().sprite = Backgrounds[0];
+            Debug.Log("실행1");
+            //CamObject.GetComponent<MusicOperator>().PlayBGM("D-15");
+        }
+        else if(DataController.Instance.gameData.turn<10){
+            BackPanel.GetComponent<Image>().sprite = Backgrounds[1];
+            Debug.Log("실행2");
+            //CamObject.GetComponent<MusicOperator>().PlayBGM("D-10");
+        }
+        else{
+            BackPanel.GetComponent<Image>().sprite = Backgrounds[2];
+            Debug.Log("실행2");
+            //CamObject.GetComponent<MusicOperator>().PlayBGM("D-10");
+
+        }
     }
 
 }

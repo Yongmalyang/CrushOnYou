@@ -17,30 +17,32 @@ public class SelectFinal : MonoBehaviour
 
         DataController.Instance.gameData.finalLover = CharIndex; //선택한 캐릭터의 번호 저장
         
-        int like = LoveList[DataController.Instance.gameData.finalLover][6]; //선택한 캐릭터 호감도에 따라 엔딩 결정
-            int endingNum;
-            if(like < 50) endingNum = 6;
-            else if(like>=50 && like<70){
-                if(DataController.Instance.gameData.myLover == DataController.Instance.gameData.finalLover){
-                    endingNum = 2;
-                }
-                else endingNum = 5;
-            }
-            else if(like>=70 && like<90){
-                if(DataController.Instance.gameData.myLover == DataController.Instance.gameData.finalLover){
-                    endingNum = 1;
-                }
-                else endingNum = 4;
-            }
-            else{
-                if(DataController.Instance.gameData.myLover == DataController.Instance.gameData.finalLover){
-                    endingNum = 0;
-                }
-                else endingNum = 3;
-            }
+        int like = LoveList[DataController.Instance.gameData.finalLover][6]; 
+        //0:배드A, 1:배드B, 2:노멀A, 3:노멀B, 4:진엔딩
+        int endingNum;
 
+        if (DataController.Instance.gameData.myLover == DataController.Instance.gameData.finalLover) //내가 선택한 친구면
+        {
+            if (like >= 100)
+            {
+                endingNum = 4;
+                DataController.Instance.gameData.endingNum = endingNum;
+                Debug.Log(endingNum);
+            }
+            else
+            {
+                endingNum = 2;
+                DataController.Instance.gameData.endingNum = endingNum;
+                Debug.Log(endingNum);
+            }
+        }
+        else
+        {
+            endingNum = 3;
             DataController.Instance.gameData.endingNum = endingNum;
             Debug.Log(endingNum);
+        }
+     
             
             EndingButton.SetActive(true); //엔딩 화면으로 넘어가는 버튼
         

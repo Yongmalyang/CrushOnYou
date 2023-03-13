@@ -49,7 +49,8 @@ public class DataController : MonoBehaviour
 
     public void LoadGameData()                                                                                                                  //게임 데이터 불러오기
     {
-        string filePath = Path.Combine(Application.dataPath, "Scripts/GameDataManagement/GameData.json");
+        //string filePath = Path.Combine(Application.dataPath, "Scripts/GameDataManagement/GameData.json");
+        string filePath = Path.Combine(Application.streamingAssetsPath, "GameData.json"); //빌드파일 오류 때문에 json 불러오는 거 수정
 
 
         if (File.Exists(filePath))
@@ -71,7 +72,8 @@ public class DataController : MonoBehaviour
     public void ToGameJson()
     {
         string jsonData = JsonUtility.ToJson(gameData, true);
-        string path = Path.Combine(Application.dataPath, "Scripts/GameDataManagement/GameData.json");
+        //string path = Path.Combine(Application.dataPath, "Scripts/GameDataManagement/GameData.json");
+        string path = Path.Combine(Application.streamingAssetsPath, "GameData.json"); //빌드파일 오류 때문에 json 불러오는 거 수정
         File.WriteAllText(path, jsonData);
     }
 
@@ -80,7 +82,7 @@ public class DataController : MonoBehaviour
         ToGameJson();
     }
 
-    void Start()
+    void Awake()
     {
 
         if (PlayerPrefs.HasKey("key") == true)
@@ -88,8 +90,6 @@ public class DataController : MonoBehaviour
             if (gameObject.name == "DataControllerF")
                 GameObject.Find("DataControllerF").SetActive(false);
         }
-
-        setLove(); //0213 추가
 
         if (PlayerPrefs.HasKey("key") == false) // 최초실행이면
         {
@@ -108,7 +108,8 @@ public class DataController : MonoBehaviour
     {
         while (true)
         {
-            string path = Path.Combine(Application.dataPath, "Scripts/GameDataManagement/GameData.json");
+            //string path = Path.Combine(Application.dataPath, "Scripts/GameDataManagement/GameData.json");
+            string path = Path.Combine(Application.streamingAssetsPath, "GameData.json"); 
             File.WriteAllText(path, JsonUtility.ToJson(gameData, true));
             try
             {
@@ -133,35 +134,8 @@ public class DataController : MonoBehaviour
 
     }
 
-    void setLove(){ //0213 추가 공략턴 호감도 생성 함수
-
-        this.gameData.RedLove = new int[7]{0,0,0,0,0,0,0};
-        this.gameData.GreenLove = new int[7]{0,0,0,0,0,0,0};
-        this.gameData.BlueLove = new int[7]{0,0,0,0,0,0,0};
-        this.gameData.PurpleLove = new int[7]{0,0,0,0,0,0,0};
-        this.gameData.PinkLove = new int[7]{0,0,0,0,0,0,0};
-        this.gameData.YellowLove = new int[7]{0,0,0,0,0,0,0};
-
-    //ooLove = oo의 인덱스 0:red 1:green 2:blue 3:purple 4:pink 5:yellow 6:me 을 향한 호감도
-    //ex) RedLove가 {0,10,20,30,40,50,60}일 때 레드의 나를 향한 호감도는 60
-
-        this.gameData.LoveList.Add(DataController.Instance.gameData.RedLove); 
-        this.gameData.LoveList.Add(DataController.Instance.gameData.GreenLove);
-        this.gameData.LoveList.Add(DataController.Instance.gameData.BlueLove);
-        this.gameData.LoveList.Add(DataController.Instance.gameData.PurpleLove);
-        this.gameData.LoveList.Add(DataController.Instance.gameData.PinkLove);
-        this.gameData.LoveList.Add(DataController.Instance.gameData.YellowLove);
-
-        for(int i=0; i<6; i++){
-            for(int j=0; j<7; j++){
-                this.gameData.LoveList[i][j] = UnityEngine.Random.Range(2,6)*10;
-            }
-            this.gameData.LoveList[i][i] = 0;
-            if(this.gameData.loveWho[i] != 7){
-                this.gameData.LoveList[i][this.gameData.loveWho[i]] = UnityEngine.Random.Range(6,8)*10;
-            }
-        }
-    }
+  
+    
 
     [System.Serializable]
     public class GameData
@@ -169,11 +143,16 @@ public class DataController : MonoBehaviour
         public bool playedBefore = false;
         public List<Character> CharacterList = new List<Character>();
 
-#region 0213추가 공략턴 데이터
+        #region 0213추가 공략턴 데이터
+
+        //0217추가 데이터_현진
+        public bool WPlayedBefore; // 공략턴 플레이했던 적 있는지
+        //
+
         public int myLover; //내가 공략할 사람
         public int myPlace; //내가 선택한 장소
-        public int maxTurn; //최대 턴(14)
-        public int turn; //현재 턴
+        public int maxTurn; //공략 최대 턴(14)
+        public int turn; //공략 현재 턴
         public int[] place; //캐릭터별 장소
         public int[] count; //장소별
         public int finalLover; //최종 이어질 사람
@@ -190,11 +169,23 @@ public class DataController : MonoBehaviour
         public int[] PurpleLove;
         public int[] PinkLove;
         public int[] YellowLove;
-#endregion
+        public int[] CoyLove;
+        #endregion
+
+        #region 추리턴 데이터
+        public bool GPlayedBefore; // 추리턴 플레이 했던 적 있는지
+        public bool Submit; // 정답 제출 여부(10턴 끝나도 제출 못 했을 시 게임 오버 넘기는 용)
+        public int Gday; //추리 현재 진행 날짜
+        public int Gturn; // 추리 현재 턴
+        public int Genergy; //추리 현재 잔여 에너지
+        public bool GOver; // 추리 턴 종료 여부
+    #endregion
 
     }
 
-    [System.Serializable]
+  
+
+[System.Serializable]
     public class Character
     {
         public Character(string _name, string _profile)

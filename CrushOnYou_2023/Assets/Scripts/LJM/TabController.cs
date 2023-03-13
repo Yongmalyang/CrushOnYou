@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class TabController : MonoBehaviour
 {
     private static TabController _instance = null;
@@ -24,9 +25,18 @@ public class TabController : MonoBehaviour
 
     TabButton tabButton;
 
+
+
+
+
     private void Start()
     {
         SelectedButton(transform.GetChild(0).GetComponent<TabButton>());
+    }
+
+    private void Update()
+    {
+        //if (GameObject.Find("Note").transform.Find("TabArea").gameObject.transform.Find("BookMarkProfile").GetComponent<T>)
     }
 
     public void SelectedButton(TabButton _button)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class EndingManager : MonoBehaviour //엔딩 이전 화면에 적용되는 스크립트
 {
@@ -12,21 +13,42 @@ public class EndingManager : MonoBehaviour //엔딩 이전 화면에 적용되�
     public List<int []> LoveList; //DataController에서 받아와서 쓸 변수(이름 길어서)
     public List<int> tempLover; //최종러버 후보들
     public List<int> favorites; //나를 제일 좋아하는 캐릭터들
+    public List<int> SixtyUp;
     public GameObject EndingButton;
-    public GameObject text;
+    public GameObject LoverSelecttext;
+    public GameObject TellSelecttext;
+    public GameObject TellSelectBtns;
+    public GameObject LoverSelecttext_;
+    public GameObject characterImg;
 
+    public bool isClicked;
 
     // Start is called before the first frame update
     void Start()
     {
         LoveList = DataController.Instance.gameData.LoveList;
         
+        SixtyUp = new List<int>();
         favorites = new List<int>();
         tempLover = new List<int>();
         characters = new List<GameObject>{red, green, blue, purple, pink, yellow};
         SetFavorites();
+        SetSixtyUp();
         SetTempLover();
-        SetEnding();
+        //SetEnding();
+    }
+
+    void Update(){
+        if(!isClicked){
+            if(Input.GetMouseButton(0)){
+                characterImg.SetActive(false);
+                SetEndingNew();
+                //LoverSelecttext_.text = "내가 더 알아가고 싶은 쪽은...";
+                LoverSelecttext.SetActive(false);
+                TellSelectBtns.SetActive(true);
+                isClicked = true;
+            }
+        }
     }
 
     void SetFavorites(){ //나를 제일 좋아하는 캐릭터들 favorites에 저장
@@ -46,12 +68,66 @@ public class EndingManager : MonoBehaviour //엔딩 이전 화면에 적용되�
         Debug.Log(favorites.Count);
     }
 
+    void SetSixtyUp() // 호감도 60 이상인 후보들 저장
+    {
+        if(favorites.Count == 0)
+        {
+            return;
+        }
+        else
+        {
+            for(int i = 0; i<favorites.Count; i++)
+            {
+                if(LoveList[favorites[i]][6] >= 60)
+                {
+                    SixtyUp.Add(favorites[i]);
+                }
+        }
+        }
+        
+        Debug.Log(SixtyUp.Count);
+    }
+
+    void SetTempLover()
+    { //최종러버 후보들 저장
+      //SixtyUp 중에 나를 향한 호감도가 똑같은 캐릭터가 여러명일 경우 떄문에
+
+        if (SixtyUp.Count == 0)
+        {
+            DataController.Instance.gameData.finalLover = 6; //나를 향한 호감도가 60 이상인 사람이 아무도 없을 때
+            DataController.Instance.gameData.endingNum = 1; //1번 엔딩으로 결정
+        }
+        else
+        {
+            int max = 0;
+            for (int i = 0; i < SixtyUp.Count; i++)
+            {
+
+                if (LoveList[SixtyUp[i]][6] > LoveList[max][6])
+                {
+                    max = SixtyUp[i];
+                    tempLover.Clear();
+                    tempLover.Add(SixtyUp[i]);
+                }
+                else if (LoveList[SixtyUp[i]][6] == LoveList[max][6])
+                {
+                    max = SixtyUp[i];
+                    tempLover.Add(SixtyUp[i]);
+                }
+            }
+        }
+
+        Debug.Log(tempLover.Count);
+    }
+    
+
+    /*
     void SetTempLover(){ //최종러버 후보들 저장
                          //favorites 중에 나를 향한 호감도가 똑같은 캐릭터가 여러명일 경우 떄문에
 
         if(favorites.Count == 0){
             DataController.Instance.gameData.finalLover = 6; //아무도 날 안좋아할 때
-            DataController.Instance.gameData.endingNum = 6; //6번 엔딩으로 결정
+            DataController.Instance.gameData.endingNum = 1; //1번 엔딩으로 결정
         }
         else{
             int max = 0;
@@ -70,6 +146,25 @@ public class EndingManager : MonoBehaviour //엔딩 이전 화면에 적용되�
         }
 
         Debug.Log(tempLover.Count);
+    }*/
+
+    void SetEndingNew()
+    {
+        if (tempLover.Count == 0){
+            EndingButton.SetActive(true);
+        }
+        else
+        {//후보가 여러명인 경우
+            EndingButton.SetActive(false);
+            for (int i = 0; i < characters.Count; i++)
+            {
+                if (tempLover.Contains(i))
+                { //후보들 화면에 띄우기
+                    characters[i].SetActive(true);
+                    LoverSelecttext.SetActive(true);
+                }
+            }
+        }
     }
 
     void SetEnding(){ //엔딩 종류 결정
@@ -106,7 +201,6 @@ public class EndingManager : MonoBehaviour //엔딩 이전 화면에 적용되�
             for(int i=0; i<characters.Count; i++){
                 if(tempLover.Contains(i)){ //후보들 화면에 띄우기
                     characters[i].SetActive(true);
-                    text.SetActive(true);
                 }
             }
         }
@@ -115,6 +209,7 @@ public class EndingManager : MonoBehaviour //엔딩 이전 화면에 적용되�
     public void LoadEnding(){
         SceneManager.LoadScene("Ending_PSY");
     }
+
 
 
 

@@ -26,7 +26,7 @@ public class SelectPlace : MonoBehaviour
     public void Select() {
 
         DataController.Instance.gameData.myPlace = PlaceIndex; //선택한 장소 저장
-        DataController.Instance.gameData.turn++; //턴 증가
+        // DataController.Instance.gameData.turn++; 대화씬->장소선택씬으로 이동할 때 증가로 바꿈(0220)
         if(DataController.Instance.gameData.count[PlaceIndex] == 0){ //선택한 장소에 아무도 없을 때
             SceneManager.LoadScene("TalkScene0_PSY");
         }

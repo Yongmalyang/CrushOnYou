@@ -21,6 +21,7 @@ public class TabButton : MonoBehaviour
         if (onTabDeselected != null)
         {
             onTabDeselected.Invoke();
+
         }
     }
 

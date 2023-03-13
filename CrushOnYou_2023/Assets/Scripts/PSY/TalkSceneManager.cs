@@ -176,6 +176,8 @@ public class TalkSceneManager : MonoBehaviour
 
     public GameObject talkPanel;
     public GameObject SceneLoadBtn;
+    public GameObject dialog;
+    public GameObject text;
     public TMP_Text TalkName;
     public TMP_Text TalkText;
     public ImageChange Img;
@@ -239,12 +241,15 @@ public class TalkSceneManager : MonoBehaviour
 
         if(Img.isIntro){
             Btns.SetActive(true);
-            Img.characters[ppHere[0]].SetActive(false);
+            dialog.SetActive(false);
+            text.SetActive(true);
             TalkName.text = "나";
             TalkText.text = "(어떤 대화 주제를 꺼낼까?)";
             Img.isIntro = false;
         }
         else{
+            dialog.SetActive(true);
+            text.SetActive(false);
             string line = GetTalk();
             if(line == null) return;
 

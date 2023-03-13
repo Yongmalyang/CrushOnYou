@@ -1,104 +1,104 @@
 {
-    "playedBefore": true,
+    "playedBefore": false,
     "CharacterList": [],
     "WPlayedBefore": true,
-    "myLover": 3,
-    "myPlace": 4,
+    "myLover": 4,
+    "myPlace": 1,
     "maxTurn": 14,
-    "turn": 8,
+    "turn": 1,
     "place": [
+        2,
+        1,
         5,
+        2,
         0,
-        4,
-        3,
-        3,
-        2
+        1
     ],
     "count": [
         1,
-        0,
-        1,
         2,
-        1,
+        2,
+        0,
+        0,
         1
     ],
-    "finalLover": 0,
-    "endingNum": 0,
+    "finalLover": 6,
+    "endingNum": 1,
     "loveWho": [
-        3,
-        4,
+        1,
         7,
+        3,
         1,
         0,
-        3
+        1
     ],
     "RedLove": [
         0,
-        20,
-        30,
-        80,
-        50,
-        50,
-        70
-    ],
-    "GreenLove": [
-        20,
-        0,
-        20,
-        20,
         70,
-        50,
-        60
-    ],
-    "BlueLove": [
-        30,
-        40,
-        0,
-        20,
-        50,
-        40,
-        50
-    ],
-    "PurpleLove": [
-        60,
-        70,
-        50,
-        0,
         20,
         40,
+        40,
+        20,
         30
     ],
-    "PinkLove": [
-        70,
+    "GreenLove": [
+        40,
+        0,
+        40,
+        20,
+        20,
+        30,
+        20
+    ],
+    "BlueLove": [
         50,
         20,
-        20,
         0,
+        60,
+        20,
+        50,
+        40
+    ],
+    "PurpleLove": [
+        20,
+        60,
+        40,
+        0,
+        50,
         20,
         40
     ],
+    "PinkLove": [
+        60,
+        40,
+        20,
+        40,
+        0,
+        50,
+        50
+    ],
     "YellowLove": [
+        50,
+        70,
+        50,
         40,
         30,
-        40,
-        60,
-        20,
         0,
-        20
+        50
     ],
     "CoyLove": [
         0,
         0,
         0,
-        100,
         0,
+        100,
         0,
         0
     ],
     "GPlayedBefore": false,
     "Submit": false,
-    "Gday": 0,
-    "Gturn": 0,
-    "Genergy": 0,
+    "Gday": 1,
+    "Gturn": 4,
+    "Genergy": 20,
     "GOver": false
 }
