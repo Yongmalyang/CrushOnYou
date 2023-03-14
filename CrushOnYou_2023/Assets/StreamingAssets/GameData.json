@@ -1,29 +1,29 @@
 {
     "playedBefore": false,
     "CharacterList": [],
-    "WPlayedBefore": true,
+    "WPlayedBefore": false,
     "myLover": 4,
-    "myPlace": 2,
+    "myPlace": 5,
     "maxTurn": 14,
-    "turn": 8,
+    "turn": 0,
     "place": [
-        5,
         4,
-        3,
-        3,
+        4,
         2,
-        5
-    ],
-    "count": [
         0,
         0,
-        1,
-        2,
-        1,
         2
     ],
-    "finalLover": 6,
-    "endingNum": 1,
+    "count": [
+        2,
+        0,
+        2,
+        0,
+        2,
+        0
+    ],
+    "finalLover": 3,
+    "endingNum": 3,
     "loveWho": [
         1,
         7,
@@ -38,8 +38,8 @@
         20,
         40,
         40,
-        20,
-        40
+        30,
+        10
     ],
     "GreenLove": [
         50,
@@ -47,44 +47,44 @@
         40,
         20,
         30,
-        30,
-        40
+        40,
+        50
     ],
     "BlueLove": [
         50,
         20,
         0,
-        70,
+        60,
         20,
         40,
-        80
+        70
     ],
     "PurpleLove": [
         20,
         60,
-        50,
+        40,
         0,
-        50,
+        60,
         20,
-        50
+        100
     ],
     "PinkLove": [
         60,
         50,
         20,
-        40,
-        0,
         50,
-        60
+        0,
+        60,
+        90
     ],
     "YellowLove": [
-        50,
-        70,
+        60,
+        80,
         40,
         40,
-        30,
+        40,
         0,
-        50
+        60
     ],
     "CoyLove": [
         0,

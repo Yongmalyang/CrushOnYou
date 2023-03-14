@@ -90,10 +90,10 @@ public class TalkSceneManager : MonoBehaviour
     public void SelectKeyword(){ //사용자가 키워드 버튼 눌렀을 때
         string ButtonName = EventSystem.current.currentSelectedGameObject.name;
         switch(ButtonName){
-            case "Kw1" : GenerateData(toShow[0]); ManageLove(0); Talk(); break;
-            case "Kw2" : GenerateData(toShow[1]); ManageLove(1); Talk(); break;
-            case "Kw3" : GenerateData(toShow[2]); ManageLove(2); Talk(); break;
-            case "Kw4" : GenerateData(toShow[3]); ManageLove(3); Talk(); break;
+            case "Kw1" : GenerateData(toShow[0]); ManageLove(0); Img.isIntro = false; Talk(); break;
+            case "Kw2" : GenerateData(toShow[1]); ManageLove(1); Img.isIntro = false; Talk(); break;
+            case "Kw3" : GenerateData(toShow[2]); ManageLove(2); Img.isIntro = false; Talk(); break;
+            case "Kw4" : GenerateData(toShow[3]); ManageLove(3); Img.isIntro = false; Talk(); break;
         }
         Btns.SetActive(false); //버튼 한번 누르면 비활성화
     }
@@ -257,13 +257,15 @@ public class TalkSceneManager : MonoBehaviour
 
     public void Talk(){ //대사 띄우고 대사 끝났는지 안끝났는지 확인
 
+        Debug.Log("talk 실행");
+        Debug.Log(Img.isIntro);
         if(Img.isIntro){
             Btns.SetActive(true);
             dialog.SetActive(false);
             text.SetActive(true);
-            TalkName.text = "나";
-            TalkText.text = "(어떤 대화 주제를 꺼낼까?)";
-            Img.isIntro = false;
+            //TalkName.text = "나";
+            //TalkText.text = "(어떤 대화 주제를 꺼낼까?)";
+            //Img.isIntro = false;
         }
         else{
             dialog.SetActive(true);
