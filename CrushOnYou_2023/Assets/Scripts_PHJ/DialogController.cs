@@ -19,6 +19,7 @@ public class DialogController : MonoBehaviour
     public Image red, green, blue, purple, pink, yellow;
     public TMP_Text dialogueText;
     public TMP_Text nameText;
+    public TMP_Text day, turn, energyT;
     public int talkIndex;
     public static bool done = false;
 
@@ -44,7 +45,7 @@ public class DialogController : MonoBehaviour
 
         if (dialogList[0][talkIndex][0] == "%END%")
         {
-            energy.SetActive(true); //0221
+            //energy.SetActive(true); //0221
 
             if (DataController.Instance.gameData.Gturn == 0)
             {
@@ -52,6 +53,8 @@ public class DialogController : MonoBehaviour
                 DataController.Instance.gameData.Gturn = 4;
                 DataController.Instance.gameData.Genergy = 20;
                 DataController.Instance.gameData.Gday += 1;
+               
+                
                 dialogList.Remove(0);
 
                 if (DataController.Instance.gameData.Gday == 11)
@@ -60,9 +63,12 @@ public class DialogController : MonoBehaviour
                 }
                 else
                 {
-                    SelectAct.gameObject.SetActive(true);
-                    Dialog.gameObject.SetActive(false);
-                    BackgroundMgr.instance.BackgroundChange();
+                    Fade.instance.FadeEffectForDigDone();
+                    //Fade.instance.FadeIn();
+                    
+                    //SelectAct.gameObject.SetActive(true);
+                    //Dialog.gameObject.SetActive(false);
+                    //BackgroundMgr.instance.BackgroundChange();
                 }
             }
             else
@@ -72,14 +78,31 @@ public class DialogController : MonoBehaviour
                 SelectAct.gameObject.SetActive(true);
                 Dialog.gameObject.SetActive(false);
                 BackgroundMgr.instance.BackgroundChange();
+                red.gameObject.SetActive(false);
+                green.gameObject.SetActive(false);
+                blue.gameObject.SetActive(false);
+                purple.gameObject.SetActive(false);
+                pink.gameObject.SetActive(false);
+                yellow.gameObject.SetActive(false);
+                energy.SetActive(true);
                 dialogList.Remove(0);
+
+                turn.text = DataController.Instance.gameData.Gturn.ToString() + " / 4";
+                if (!(DataController.Instance.gameData.Gday == 11))
+                {
+                    day.text = DataController.Instance.gameData.Gday.ToString();
+                }
+                energyT.text = DataController.Instance.gameData.Genergy.ToString();
+
             }
+            /*
             red.gameObject.SetActive(false);
             green.gameObject.SetActive(false);
             blue.gameObject.SetActive(false);
             purple.gameObject.SetActive(false);
             pink.gameObject.SetActive(false);
             yellow.gameObject.SetActive(false);
+            */
         }
         else
         {

@@ -9,19 +9,25 @@ public class TurnPass : MonoBehaviour
     public TMP_Text turn;
     public TMP_Text day;
     public Image guess, guessend;
-    public GameObject DigController, BackgroundMgr, QMake;
+    public GameObject DigController, BackgroundMgr, QMake, Fade;
 
     public void Start()
     {
-        
+        turn.text = DataController.Instance.gameData.Gturn.ToString() + " / 4";
+        if (!(DataController.Instance.gameData.Gday == 11))
+        {
+            day.text = DataController.Instance.gameData.Gday.ToString();
+        }
     }
     public void Update()
     {
+        /*
         turn.text = DataController.Instance.gameData.Gturn.ToString() + " / 4";
         if(!(DataController.Instance.gameData.Gday == 11))
         {
             day.text = DataController.Instance.gameData.Gday.ToString();
         }
+        */
         
     }
 
@@ -38,6 +44,7 @@ public class TurnPass : MonoBehaviour
             Destroy(BackgroundMgr);
             Destroy(QMake);
             Destroy(DigController);
+            Destroy(Fade);
             if(DataController.Instance.gameData.Submit == true)
             {
                 SceneManager.LoadScene("Epi1Done");
@@ -54,8 +61,8 @@ public class TurnPass : MonoBehaviour
                 DataController.Instance.gameData.Genergy = 20;
                 DialogController.done = true;
 
-                RandomQuestion.instance.RandomIndexMake();
-                RandomQuestion.instance.QuestionUpdate();
+                //RandomQuestion.instance.RandomIndexMake();
+                //RandomQuestion.instance.QuestionUpdate();
 
                 DialogController.done = false;
         }
@@ -71,6 +78,7 @@ public class TurnPass : MonoBehaviour
             Destroy(BackgroundMgr);
             Destroy(QMake);
             Destroy(DigController);
+            Destroy(Fade);
             SceneManager.LoadScene("Epi1Done");
         }
         else if(DataController.Instance.gameData.Gday == 11 && DataController.Instance.gameData.Submit == false)
@@ -78,6 +86,7 @@ public class TurnPass : MonoBehaviour
             Destroy(BackgroundMgr);
             Destroy(QMake);
             Destroy(DigController);
+            Destroy(Fade);
             SceneManager.LoadScene("GameOver");
         }
         

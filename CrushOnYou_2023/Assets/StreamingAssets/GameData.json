@@ -1,90 +1,90 @@
 {
-    "playedBefore": false,
+    "playedBefore": true,
     "CharacterList": [],
     "WPlayedBefore": false,
     "myLover": 3,
     "myPlace": 3,
     "maxTurn": 14,
-    "turn": 12,
+    "turn": 0,
     "place": [
         1,
-        4,
-        5,
         2,
-        1,
-        4
+        0,
+        3,
+        2,
+        3
     ],
     "count": [
-        0,
-        2,
         1,
-        0,
+        1,
         2,
-        1
+        2,
+        0,
+        0
     ],
     "finalLover": 0,
     "endingNum": 3,
     "loveWho": [
-        7,
-        4,
+        5,
+        5,
+        1,
         0,
         2,
-        3,
-        3
+        7
     ],
     "RedLove": [
         0,
-        30,
-        40,
         20,
+        70,
         50,
-        50,
-        70
+        40,
+        40,
+        40
     ],
     "GreenLove": [
-        40,
+        60,
         0,
+        30,
+        40,
+        20,
         50,
-        40,
-        70,
-        40,
-        70
+        40
     ],
     "BlueLove": [
-        70,
-        50,
+        30,
+        20,
         0,
         20,
+        60,
         20,
-        40,
-        30
+        50
     ],
     "PurpleLove": [
-        20,
         30,
-        60,
-        0,
         50,
         30,
-        30
+        0,
+        40,
+        20,
+        20
     ],
     "PinkLove": [
-        30,
-        50,
-        40,
-        70,
-        0,
-        50,
-        30
-    ],
-    "YellowLove": [
         60,
         20,
+        30,
         20,
-        70,
-        50,
         0,
+        20,
         20
+    ],
+    "YellowLove": [
+        30,
+        40,
+        50,
+        40,
+        60,
+        0,
+        50
     ],
     "CoyLove": [
         0,
@@ -95,9 +95,9 @@
         0,
         0
     ],
-    "GPlayedBefore": false,
+    "GPlayedBefore": true,
     "Submit": false,
-    "Gday": 1,
+    "Gday": 2,
     "Gturn": 4,
     "Genergy": 20,
     "GOver": false

@@ -19,7 +19,7 @@ public class SelectCard : MonoBehaviour
 
     void Update()
     {
-        energy.text = DataController.Instance.gameData.Genergy.ToString();
+        //energy.text = DataController.Instance.gameData.Genergy.ToString();
 
         if (DataController.Instance.gameData.Genergy < cardenergy)
         {
