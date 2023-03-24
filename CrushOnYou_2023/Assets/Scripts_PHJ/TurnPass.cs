@@ -16,7 +16,7 @@ public class TurnPass : MonoBehaviour
         turn.text = DataController.Instance.gameData.Gturn.ToString() + " / 4";
         if (!(DataController.Instance.gameData.Gday == 11))
         {
-            day.text = DataController.Instance.gameData.Gday.ToString();
+            day.text = DataController.Instance.gameData.Gday.ToString() + " of 10";
         }
     }
     public void Update()

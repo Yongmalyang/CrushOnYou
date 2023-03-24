@@ -63,7 +63,7 @@ public class DialogController : MonoBehaviour
                 }
                 else
                 {
-                    Fade.instance.FadeEffectForDigDone();
+                    FadeController.instance.FadeFuncForDigDone();
                     //Fade.instance.FadeIn();
                     
                     //SelectAct.gameObject.SetActive(true);
@@ -90,7 +90,7 @@ public class DialogController : MonoBehaviour
                 turn.text = DataController.Instance.gameData.Gturn.ToString() + " / 4";
                 if (!(DataController.Instance.gameData.Gday == 11))
                 {
-                    day.text = DataController.Instance.gameData.Gday.ToString();
+                    day.text = DataController.Instance.gameData.Gday.ToString() + " of 10";
                 }
                 energyT.text = DataController.Instance.gameData.Genergy.ToString();
 

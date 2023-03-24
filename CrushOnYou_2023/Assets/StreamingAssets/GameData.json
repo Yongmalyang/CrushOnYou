@@ -1,5 +1,5 @@
 {
-    "playedBefore": false,
+    "playedBefore": true,
     "CharacterList": [],
     "WPlayedBefore": false,
     "myLover": 3,
@@ -25,12 +25,12 @@
     "finalLover": 0,
     "endingNum": 3,
     "loveWho": [
-        3,
-        5,
-        3,
+        7,
+        2,
         4,
-        1,
-        7
+        4,
+        3,
+        4
     ],
     "RedLove": [
         0,
@@ -95,9 +95,9 @@
         0,
         0
     ],
-    "GPlayedBefore": false,
+    "GPlayedBefore": true,
     "Submit": false,
-    "Gday": 1,
+    "Gday": 3,
     "Gturn": 4,
     "Genergy": 20,
     "GOver": false

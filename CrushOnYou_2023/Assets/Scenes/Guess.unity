@@ -1753,7 +1753,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150.72, y: -298.3188}
+  m_AnchoredPosition: {x: -151.5, y: -298.3188}
   m_SizeDelta: {x: 8.32, y: 1.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &164186326
@@ -2292,7 +2292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &220292050
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9237,7 +9237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &830032352
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9312,7 +9312,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -13108,65 +13108,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178397378}
   m_CullTransparentMesh: 1
---- !u!1 &1178828288
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1178828290}
-  - component: {fileID: 1178828289}
-  m_Layer: 0
-  m_Name: Fade
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1178828289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1178828288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9c4ef22aa4ebfa439a3b42ef35a3084, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DayMarkPanel: {fileID: 1841034343}
-  energy: {fileID: 1314727424}
-  image: {fileID: 1841034345}
-  text: {fileID: 830032353}
-  day: {fileID: 1226652993}
-  turn: {fileID: 945582092}
-  energyT: {fileID: 399380259}
-  Dialog: {fileID: 1683498033}
-  SelectAct: {fileID: 1264253728}
-  red: {fileID: 1331538545}
-  green: {fileID: 914315270}
-  blue: {fileID: 1809038025}
-  purple: {fileID: 1637644032}
-  pink: {fileID: 1709414150}
-  yellow: {fileID: 2076493498}
---- !u!4 &1178828290
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1178828288}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.82847774, y: -0.48374274, z: 0.20188722}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1203169354
 GameObject:
   m_ObjectHideFlags: 0
@@ -13847,7 +13788,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 1 of 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 07a946327cced2b418173f0cfa0e9a6d, type: 2}
   m_sharedMaterial: {fileID: -7647959460157560857, guid: 07a946327cced2b418173f0cfa0e9a6d, type: 2}
@@ -13910,7 +13851,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -2.2765045, y: 0, z: -9.863827, w: 0}
+  m_margin: {x: -2.2765045, y: 0, z: -53.1066, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -15662,7 +15603,7 @@ MonoBehaviour:
   DigController: {fileID: 630309167}
   BackgroundMgr: {fileID: 1102308659}
   QMake: {fileID: 544783681}
-  Fade: {fileID: 1178828288}
+  Fade: {fileID: 0}
 --- !u!4 &1377443402
 Transform:
   m_ObjectHideFlags: 0
@@ -16233,8 +16174,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 236, y: 477}
-  m_SizeDelta: {x: 80, y: 70}
+  m_AnchoredPosition: {x: 168.5, y: 477}
+  m_SizeDelta: {x: 144.86, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1393750495
 MonoBehaviour:
@@ -18911,6 +18852,66 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1593740758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1593740760}
+  - component: {fileID: 1593740759}
+  m_Layer: 0
+  m_Name: Fade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1593740759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593740758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42a484f5282e5d347bceb24225330246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DayMarkPanel: {fileID: 1841034343}
+  energy: {fileID: 1314727424}
+  text: {fileID: 830032353}
+  day: {fileID: 1226652993}
+  turn: {fileID: 945582092}
+  energyT: {fileID: 399380259}
+  Dialog: {fileID: 1683498033}
+  SelectAct: {fileID: 1264253728}
+  red: {fileID: 1331538545}
+  green: {fileID: 914315270}
+  blue: {fileID: 1809038025}
+  purple: {fileID: 1637644032}
+  pink: {fileID: 1709414150}
+  yellow: {fileID: 2076493498}
+  cg: {fileID: 1841034348}
+  fadeTime: 1
+--- !u!4 &1593740760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593740758}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.76836073, y: -0.3434806, z: 0.24018545}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1598016116
 GameObject:
   m_ObjectHideFlags: 0
@@ -22063,13 +22064,14 @@ GameObject:
   - component: {fileID: 1841034344}
   - component: {fileID: 1841034346}
   - component: {fileID: 1841034345}
+  - component: {fileID: 1841034348}
   m_Layer: 5
   m_Name: DayMarkPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1841034344
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22130,6 +22132,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841034343}
   m_CullTransparentMesh: 1
+--- !u!225 &1841034348
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841034343}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1859593361
 GameObject:
   m_ObjectHideFlags: 0
@@ -24653,9 +24667,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1178828289}
-        m_TargetAssemblyTypeName: Fade, Assembly-CSharp
-        m_MethodName: FadeEffectForDayPassBtn
+      - m_Target: {fileID: 1593740759}
+        m_TargetAssemblyTypeName: FadeController, Assembly-CSharp
+        m_MethodName: FadeFuncForDayPassBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
